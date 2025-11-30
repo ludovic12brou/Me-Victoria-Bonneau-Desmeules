@@ -31,32 +31,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Formulaire de contact
 const contactForm = document.getElementById('contactForm');
 
+// Initialisation EmailJS
+emailjs.init('HCDOTC8fmqPSLwGof');
+
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // Récupérer les données du formulaire
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
-    
+
     // Validation
-    if (!data.name || !data.email || !data.message) {
+    if (!data.From_name || !data.email || !data.message) {
         alert('Veuillez remplir tous les champs obligatoires');
         return;
     }
-    
+
     // Validation email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(data.email)) {
         alert('Veuillez entrer une adresse email valide');
         return;
     }
-    
-    // Afficher un message de succès (en attendant un vrai backend)
-    alert('Merci pour votre message! Nous vous répondrons bientôt.');
-    contactForm.reset();
+
+    // Envoi via EmailJS
+    emailjs.send('service_vegi2hi', 'template_ot8e26r', {
+        email: data.email,
+        phone: data.phone || '',
+        message: data.message,
+        From_name: data.From_name || ''
+    })
+    .then(function(response) {
+        alert('Merci pour votre message! Nous vous répondrons bientôt.');
+        contactForm.reset();
+    }, function(error) {
+        alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer plus tard.');
+    });
 });
 
 // Animation au scroll
+// Modal Notice légale
+const openLegalModal = document.getElementById('openLegalModal');
+const legalModal = document.getElementById('legalModal');
+const closeLegalModal = document.getElementById('closeLegalModal');
+
+if (openLegalModal && legalModal && closeLegalModal) {
+    openLegalModal.addEventListener('click', function(e) {
+        e.preventDefault();
+        legalModal.style.display = 'flex';
+    });
+    closeLegalModal.addEventListener('click', function() {
+        legalModal.style.display = 'none';
+    });
+    legalModal.addEventListener('click', function(e) {
+        if (e.target === legalModal) {
+            legalModal.style.display = 'none';
+        }
+    });
+}
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'

@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Me Victoria Bonneau Desmeules - Avocate</title>
+    <link rel="icon" type="image/png" href="images/VBD.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="images/VBD.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/VBD.png" sizes="256x256">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init('HCDOTC8fmqPSLwGof'); // User ID EmailJS fourni
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">
-                    <h1>Me Victoria Bonneau Desmeules - Avocate</h1>
+                <div class="logo" style="display:flex;align-items:center;min-width:0;">
+                    <img src="images/VBD.png" alt="Logo VBD" style="height:40px;vertical-align:middle;margin-right:0.7em;max-width:100%;">
+                    <h1 style="display:inline-block;vertical-align:middle;font-size:1.15rem;">Me Victoria Bonneau Desmeules - Avocate</h1>
+                    <button class="menu-toggle" id="menuToggle" style="margin-left:0.7em;"></button>
                 </div>
-                <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>                    
                     <li><a href="#contact">Contact</a></li>
+
                 </ul>
             </div>
         </div>
@@ -44,12 +53,12 @@
                 </div>
 
                 <div class="hero-description">
-                    <p>Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet Dumas Carré Théberge Michaud-Brière Avocats. Diplômée en droit de l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche bienveillante. Elle offre également divers services connexes au droit, mettant à profit ses compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et sa rigueur contribuent activement à la réputation d'excellence du cabinet.</p>
+                    <p>Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet <a href="https://ctmbavocats.com" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">DCTMB Avocats</a>. Diplômée en droit de l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche bienveillante. Elle offre également divers services connexes au droit, mettant à profit ses compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et sa rigueur contribuent activement à la réputation d'excellence du cabinet.</p>
                 </div>
             </div>
-
-           
-
+                    <div class="hero-image">
+                <img src="images/Vivi.jpg" alt="Me Victoria Bonneau Desmeules">
+            </div>    
         </div>
     </section>
 
@@ -117,10 +126,149 @@
         </div>
     </section>
 
+    <!-- Section Tarifs -->
+    <section id="tarifs" class="tarifs">
+        <div class="container">
+            <h2>Tarifs</h2>
+            <p class="service-availability">Vous trouverez ci-bas nos tarifs pour certains des services offerts.</p>
+            <div class="tarifs-grid">
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+                            <h3>Mise en demeure</h3>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">550$ CAD</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Mise en demeure</span>
+                            </div>
+                            <ul class="tarif-steps" style="font-size:0.75em;">
+                                <li>Rencontre initiale (30 minutes)</li>
+                                <li>Rédaction de la mise en demeure</li>
+                                <li>Envoi par huissier (frais de huissier non-inclus)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-comments"></i></div>
+                            <h3>Conseils juridiques</h3>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">150$ CAD / heure</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Conseils juridiques</span>
+                            </div>
+                            <ul class="tarif-steps">
+                                <li>Rencontre par visioconférence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                            <h3>Divorce non-contesté</h3>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">1 500$ CAD</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Divorce non-contesté</span>
+                            </div>
+                            <ul class="tarif-steps">
+                                <li>Rencontre initiale (1h)</li>
+                                <li>Rédaction de la demande conjointe de divorce</li>
+                                <li>Préparation des déclarations sous serment des parties</li>
+                                <li>Rédaction de la convention de divorce</li>
+                                <li>Dépôt à la cour</li>
+                                <li>Timbre judiciaire non-inclu, environ 365$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                            <h3>Divorce contesté</h3>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">1 700$ CAD</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Divorce contesté</span>
+                            </div>
+                            <ul class="tarif-steps">
+                                <li>Rencontre initiale (1h30)</li>
+                                <li>Rédaction de la demande introductive d’instance en divorce</li>
+                                <li>Rédaction des déclarations sous serment</li>
+                                <li>Préparation de l’avis de présentation</li>
+                                <li>Dépôt à la cour - timbre judiciaire non-inclus (environ 365$)</li>
+                                <li>Signification (Frais de huissier non-inclus)</li>
+                                <li>Préparation des documents et formulaires requis (Pièces, Annexe I, Formulaire III, etc.)</li>
+                                <li>Représentation à la cour non-inclus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                            <h3>Procédure contestée en matière familiale </h3>
+                            <h4>(Demande en garde d’enfants et/ou pour pension alimentaire)</h4>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">1 600$ CAD</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Procédure contestée en matière familiale</span>
+                            </div>
+                            <ul class="tarif-steps">
+                                <li>Demande introductive ou demande en modification d’un jugement précédent</li>
+                                <li>Rencontre initiale (1h30)</li>
+                                <li>Rédaction de la demande initiale</li>
+                                <li>Préparation des pièces et des formulaires requis (Annexes I, preuves de revenus, etc.)</li>
+                                <li>Préparation de l’avis de présentation</li>
+                                <li>Signification (frais de huissier non-inclus)</li>
+                                <li>Dépôt à la cour - timbre judiciaire non inclus (environ 177$)</li>
+                                <li>Représentation à la cour non-inclus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarifs-card">
+                    <div class="tarifs-card-inner">
+                        <div class="tarifs-card-front">
+                            <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+                            <h3>Procédures non-contestées en matière familiale </h3>
+                            <h4>(Demande en garde d’enfants et/ou pour pension alimentaire)</h4>
+                        </div>
+                        <div class="tarifs-card-back">
+                            <div style="display:block;">
+                                <div class="tarif-badge">1 300$ CAD</div>
+                                <span style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Procédures non-contestées en matière familiale</span>
+                            </div>
+                            <ul class="tarif-steps">
+                                <li>Rencontre initiale (1h)</li>
+                                <li>Rédaction de la demande initiale ou de la demande en modification</li>
+                                <li>Préparation des pièces et des formulaires requis (Annexe I, déclaration 444, preuves de revenus)</li>
+                                <li>Préparation de la déclaration sous serment</li>
+                                <li>Dépôt à la cour - timbre judiciaire non-inclus (environ 177$)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
     <!-- Section Contact -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Nous contacter</h2>
+            <p class="contact-message">N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.</p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <div class="info-item">
@@ -143,18 +291,19 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Adresse</h4>
-                            <p>400 boul. Jean-Lesage<br>
+                            <p><a href="https://maps.app.goo.gl/SzWN6xFdxboHuw7v6" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">400 boul. Jean-Lesage<br>
                             Suite 550<br>
-                            Québec, QC, G1K 8W1</p>
+                            Québec, QC, G1K 8W1</a></p>
                         </div>
                     </div>
+                    <div style="margin-top:1.5em; text-align:center; color:var(--secondary); font-size:1.08rem; font-weight:500;">Au plaisir de faire affaire avec vous!</div>
                 </div>
 
                 <div>
-                    <p class="contact-message">N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.</p>
                     <form class="contact-form" id="contactForm">
+                        <div style="text-align:center; margin-bottom:1em; color:var(--primary); font-weight:600; font-size:1.2em;">Formulaire de contact</div>
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            <input type="text" id="From_name" name="From_name" placeholder="Votre nom" required>
                     </div>
 
                     <div class="form-group">
@@ -179,11 +328,77 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Me Victoria Bonneau Desmeules. Tous droits réservés.</p>
+            <div style="display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap; width:100%;">
+                <div style="width:100%; text-align:center;">
+                    <p style="margin:0 auto; text-align:center;">&copy; 2025 Me Victoria Bonneau Desmeules. Tous droits réservés.
+                        <span style="margin:0 0.7em;"></span>
+                        <a href="#" id="openLegalModal" style="font-size:0.95rem; text-decoration:underline; color:inherit;">Mention légale</a>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Fenêtre modale Notice légale -->
+    <div id="legalModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:9999; justify-content:center; align-items:center;">
+        <div style="background:#fff; max-width:600px; width:90vw; padding:2rem 1.5rem; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18); font-size:0.85rem; text-align:justify; position:relative;">
+            <button id="closeLegalModal" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            <h2 style="font-size:1rem; margin-bottom:0.7rem; text-align:left;">Mention légale</h2>
+            <p><strong>Éditeur du site :</strong> Me Victoria Bonneau Desmeules, 400 boul. Jean-Lesage, Suite 550, Québec, QC, G1K 8W1.</p>
+            <p><strong>Contact :</strong> v.bonneau-desmeules@vbdavocate.com | (418) 720-5055</p>
+            <p><strong>Propriété intellectuelle :</strong> Tous les contenus présents sur ce site (textes, images, logos, etc.) sont la propriété exclusive de Me Victoria Bonneau Desmeules, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, est interdite sans autorisation préalable.</p>
+            <p><strong>Responsabilité :</strong> Les informations fournies sur ce site sont à titre indicatif et ne sauraient constituer un conseil juridique personnalisé. Me Victoria Bonneau Desmeules ne saurait être tenue responsable de l’utilisation qui pourrait en être faite.</p>
+            <p><strong>Données personnelles :</strong> Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre aux demandes et ne sont pas conservées ni transmises à des tiers. Conformément à la loi, vous pouvez demander la suppression ou la modification de vos données en contactant l’éditeur.</p>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <style>
+        .navbar {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .nav-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+        }
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2em;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            flex: 0 0 auto;
+        }
+        /* Les couleurs originales des boutons sont gérées par le fichier CSS principal */
+        @media (max-width: 900px) {
+            .nav-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo {
+                margin-bottom: 0.7em;
+            }
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.7em;
+                width: 100%;
+            }
+            .nav-menu a {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
 </body>
 </html>
