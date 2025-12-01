@@ -70,6 +70,35 @@ contactForm.addEventListener('submit', function(e) {
 });
 
 // Animation au scroll
+// Flip automatique des cartes de tarifs sur mobile
+function isMobile() {
+    return window.innerWidth <= 900 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isFullyVisible(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function autoFlipTarifCards() {
+    if (!isMobile()) return;
+    document.querySelectorAll('.tarifs-card-inner').forEach(card => {
+        if (isFullyVisible(card)) {
+            card.classList.add('flipped');
+        } else {
+            card.classList.remove('flipped');
+        }
+    });
+}
+
+window.addEventListener('scroll', autoFlipTarifCards);
+window.addEventListener('resize', autoFlipTarifCards);
+document.addEventListener('DOMContentLoaded', autoFlipTarifCards);
 // Modal Notice légale
 const openLegalModal = document.getElementById('openLegalModal');
 const legalModal = document.getElementById('legalModal');
