@@ -118,6 +118,8 @@ body {
     gap: 2rem;
     align-items: center;
     /* Ensure vertical alignment */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
 }
 
 .nav-menu a {
@@ -210,14 +212,33 @@ body {
         text-align: center;
     }
 
+    /* Force dark text on white mobile menu */
+    .nav-menu a {
+        color: var(--text-dark);
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+
     .lang-btn {
         width: 100%;
         justify-content: center;
         padding: 1rem;
-        /* Larger touch target on mobile */
         font-size: 1.1rem;
         margin-top: 0;
-        /* Reset margin on mobile */
+        color: var(--text-dark);
+        /* Visible on white background */
+    }
+
+    .lang-btn:hover {
+        background-color: transparent;
+        color: var(--primary-color);
     }
 }
 
