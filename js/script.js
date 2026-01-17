@@ -1,44 +1,71 @@
 // Langue par défaut
+console.log('Script chargé. Détection de la langue...');
 let currentLang = localStorage.getItem('site_lang') || (navigator.language.startsWith('en') ? 'en' : 'fr');
+console.log('Langue actuelle:', currentLang);
 
 // Fonction de mise à jour de la langue
 function updateLanguage(lang) {
+    console.log('Mise à jour de la langue vers:', lang);
     currentLang = lang;
     localStorage.setItem('site_lang', lang);
     document.documentElement.lang = lang;
 
+    // Mettre à jour le bouton de langue en premier
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) {
+        langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
+    } else {
+        console.warn('Bouton langToggle introuvable');
+    }
+
+    // Vérifier si les traductions sont chargées
+    if (!window.translations) {
+        console.error('Erreur: window.translations est indéfini');
+        return;
+    }
+
+    if (!window.translations[lang]) {
+        console.error('Erreur: Aucune traduction trouvée pour la langue', lang);
+        return;
+    }
+
     // Mettre à jour les textes
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-            // Si c'est un lien email avec <wbr>, on gère différemment ou on met juste le texte
-            // Pour simplifier, on injecte le HTML pour permettre les liens et formattage
-            element.innerHTML = translations[lang][key];
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        try {
+            const key = element.getAttribute('data-i18n');
+            if (window.translations[lang][key]) {
+                element.innerHTML = window.translations[lang][key];
+            }
+        } catch (err) {
+            console.error('Erreur traduction élément:', err);
         }
     });
 
     // Mettre à jour les placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-        const key = element.getAttribute('data-i18n-placeholder');
-        if (translations[lang][key]) {
-            element.placeholder = translations[lang][key];
+        try {
+            const key = element.getAttribute('data-i18n-placeholder');
+            if (window.translations[lang][key]) {
+                element.placeholder = window.translations[lang][key];
+            }
+        } catch (err) {
+            console.error('Erreur traduction placeholder:', err);
         }
     });
-
-    // Mettre à jour le bouton de langue
-    const langBtn = document.getElementById('langToggle');
-    if (langBtn) {
-        langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
-    }
 }
 
-// Initialisation de la langue
+// Initialisation au chargement
 document.addEventListener('DOMContentLoaded', () => {
-    updateLanguage(currentLang);
+    console.log('DOM Ready. Initialisation langue...');
+    // Délai court pour s'assurer que translations.js est bien pris en compte si chargement async
+    setTimeout(() => updateLanguage(currentLang), 10);
 
     const langBtn = document.getElementById('langToggle');
     if (langBtn) {
-        langBtn.addEventListener('click', () => {
+        langBtn.addEventListener('click', (e) => {
+            console.log('Clic bouton langue');
+            e.preventDefault(); // Sécurité supplémentaire
             const newLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguage(newLang);
 
@@ -48,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('active');
             }
         });
+    } else {
+        console.error('Impossible d\'attacher l\'événement clic: #langToggle introuvable');
     }
 });
 
