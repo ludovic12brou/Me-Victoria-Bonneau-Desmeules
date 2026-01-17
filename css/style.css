@@ -116,6 +116,8 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center;
+    /* Ensure vertical alignment */
 }
 
 .nav-menu a {
@@ -194,8 +196,7 @@ body {
     justify-content: center;
     text-transform: uppercase;
     /* Match general nav feel if needed, though links are mixed case usually */
-    margin-top: -2px;
-    /* Slight adjustment to align visually with text baseline */
+    margin-top: 0;
 }
 
 .lang-btn:hover {
