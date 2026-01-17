@@ -760,19 +760,11 @@ body {
 .contact-form button {
     align-self: center;
     margin-top: 1.2rem;
-    font-size: 1.05rem;
-    padding: 12px 30px;
-    border-radius: 50px;
-    /* Rounded pill shape like other buttons */
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--primary-color) 100%);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(30, 60, 120, 0.2);
+    font-size: 1.08rem;
+    padding: 14px 38px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60, 80, 120, 0.09);
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .contact-form button:hover {
@@ -781,7 +773,7 @@ body {
 }
 
 .contact-form button:disabled {
-    background: #ccc;
+    background-color: #a0b3c6;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
