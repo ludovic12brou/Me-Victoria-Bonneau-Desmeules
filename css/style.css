@@ -227,6 +227,13 @@ body {
 
 
     /* Force dark text on white mobile menu */
+    .nav-menu {
+        z-index: 2000;
+        /* Ensure container is above everything */
+        background: #fff !important;
+        /* Force white background */
+    }
+
     .nav-menu a {
         color: #1f3a52 !important;
         /* Force dark blue explicitly */
@@ -238,8 +245,8 @@ body {
         text-align: center;
         font-weight: 600;
         /* Make it slightly bolder to ensure readability */
-        z-index: 10;
-        /* Ensure text is on top */
+        z-index: 2010;
+        /* Ensure text is strictly above container */
         position: relative;
     }
 
@@ -258,7 +265,7 @@ body {
         /* Force dark blue explicitly */
         background: transparent !important;
         font-weight: 600;
-        z-index: 10;
+        z-index: 2010;
         position: relative;
         /* Visible on white background */
     }
