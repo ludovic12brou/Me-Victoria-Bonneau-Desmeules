@@ -100,42 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
         let touchEndY = 0;
         let isScrolling = false;
 
-        // Ajouter un bouton de fermeture sur la carte retournée pour mobile
         const cardBack = card.querySelector('.tarifs-card-back');
-
-        if (cardBack && isMobile()) {
-            // Créer le bouton de fermeture
-            const closeButton = document.createElement('button');
-            closeButton.innerHTML = '×';
-            closeButton.className = 'card-close-btn';
-            closeButton.setAttribute('aria-label', 'Fermer');
-
-            // Ajouter le bouton au début de la carte retournée
-            cardBack.insertBefore(closeButton, cardBack.firstChild);
-
-            // Gérer le clic sur le bouton de fermeture
-            closeButton.addEventListener('click', function (e) {
-                e.stopPropagation();
-                e.preventDefault();
-                const cardInner = card.querySelector('.tarifs-card-inner');
-                cardInner.classList.remove('flipped');
-            });
-        }
 
         if (cardBack) {
             cardBack.addEventListener('touchstart', function (e) {
                 // Ne pas empêcher la propagation pour permettre la détection du scroll
-                const target = e.target;
-                if (target.classList.contains('card-close-btn')) {
-                    return; // Laisser le bouton gérer son propre événement
-                }
             }, { passive: true });
 
             cardBack.addEventListener('click', function (e) {
-                // Empêcher le flip seulement si ce n'est pas le bouton de fermeture
-                if (!e.target.classList.contains('card-close-btn')) {
-                    e.stopPropagation();
-                }
+                // Empêcher le flip quand on clique sur le contenu
+                e.stopPropagation();
             });
         }
 
