@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
         langBtn.addEventListener('click', () => {
             const newLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguage(newLang);
+
+            // Fermer le menu mobile si ouvert
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
         });
     }
 });
