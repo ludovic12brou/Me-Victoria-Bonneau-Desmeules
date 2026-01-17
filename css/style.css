@@ -179,9 +179,9 @@ body {
     background: transparent;
     border: none;
     color: var(--text-light);
-    font-family: inherit;
+    font-family: 'Montserrat', sans-serif;
+    /* Force font consistency */
     font-size: 1rem;
-    /* Match nav links */
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
@@ -190,11 +190,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+    /* Match general nav feel if needed, though links are mixed case usually */
 }
 
 .lang-btn:hover {
     background-color: var(--text-light);
     color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lang-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+        /* Larger touch target on mobile */
+        font-size: 1.1rem;
+    }
 }
 
 /* Section Héro */
