@@ -718,6 +718,124 @@ body {
     padding: 14px 38px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(60, 80, 120, 0.09);
+    transition: all 0.3s ease;
+}
+
+.contact-form button:disabled {
+    background-color: #a0b3c6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Validation des champs */
+.contact-form input.valid,
+.contact-form textarea.valid {
+    border: 2px solid #4CAF50;
+    background-color: #f0fff4;
+}
+
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border: 2px solid #FF5252;
+    background-color: #fff0f0;
+}
+
+.input-feedback {
+    font-size: 0.85rem;
+    margin-top: -0.3rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.input-feedback.error {
+    color: #FF5252;
+}
+
+.input-feedback.success {
+    color: #4CAF50;
+}
+
+/* Notifications Professionnelles */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    background: #fff;
+    color: var(--text-dark);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    max-width: 450px;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-left: 6px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification.success {
+    border-left-color: #4CAF50;
+}
+
+.notification.success .notification-icon {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.notification.error {
+    border-left-color: #FF5252;
+}
+
+.notification.error .notification-icon {
+    color: #FF5252;
+    background: rgba(255, 82, 82, 0.1);
+}
+
+.notification-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-title {
+    font-weight: 700;
+    margin-bottom: 2px;
+    display: block;
+    color: var(--primary-color);
+}
+
+.notification-message {
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 /* Footer */

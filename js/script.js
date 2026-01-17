@@ -38,52 +38,159 @@ const contactForm = document.getElementById('contactForm');
     });
 })();
 
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+// Notification system
+function showNotification(message, type = 'success') {
+    const container = document.getElementById('notification-container');
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
 
-    // Récupérer les données du formulaire
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
+    const icon = type === 'success' ? '<i class="fas fa-check"></i>' : '<i class="fas fa-exclamation"></i>';
+    const title = type === 'success' ? 'Succès' : 'Erreur';
 
-    // Validation
-    if (!data.from_name || !data.email || !data.message) {
-        alert('Veuillez remplir tous les champs obligatoires');
-        return;
-    }
+    notification.innerHTML = `
+        <div class="notification-icon">${icon}</div>
+        <div class="notification-content">
+            <span class="notification-title">${title}</span>
+            <span class="notification-message">${message}</span>
+        </div>
+    `;
 
-    // Validation email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(data.email)) {
-        alert('Veuillez entrer une adresse email valide');
-        return;
-    }
+    container.appendChild(notification);
 
-    // Désactiver le bouton pendant l'envoi
-    const submitButton = this.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = 'Envoi en cours...';
+    // Trigger animation
+    requestAnimationFrame(() => {
+        notification.classList.add('show');
+    });
 
-    // Envoi via EmailJS
-    emailjs.send('service_vegi2hi', 'template_ot8e26r', {
-        from_name: data.from_name,
-        email: data.email,
-        phone: data.phone || 'Non fourni',
-        message: data.message
-    })
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Merci pour votre message! Nous vous répondrons bientôt.');
-            contactForm.reset();
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
-        }, function (error) {
-            console.error('FAILED...', error);
-            alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer plus tard.');
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
+    // Auto remove
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 400);
+    }, 5000);
+}
+
+// Fonction de validation email
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Gestion du formulaire avec validation
+if (contactForm) {
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    // Validation en temps réel
+    inputs.forEach(input => {
+        // Créer l'élément de feedback s'il n'existe pas
+        let feedback = input.nextElementSibling;
+        if (!feedback || !feedback.classList.contains('input-feedback')) {
+            feedback = document.createElement('div');
+            feedback.className = 'input-feedback';
+            input.parentNode.insertBefore(feedback, input.nextSibling);
+        }
+
+        input.addEventListener('input', validateInput);
+        input.addEventListener('blur', validateInput);
+
+        function validateInput() {
+            let isValid = true;
+            let message = '';
+
+            // Reset classes
+            input.classList.remove('valid', 'invalid');
+            feedback.className = 'input-feedback';
+            feedback.textContent = '';
+
+            if (input.hasAttribute('required') && !input.value.trim()) {
+                isValid = false;
+                // On n'affiche pas d'erreur immédiate si le champ est vide au focus, 
+                // seulement au blur ou si on a commencé à taper
+                if (input.value.length > 0) message = 'Ce champ est requis';
+            } else if (input.type === 'email' && input.value.trim()) {
+                if (!isValidEmail(input.value)) {
+                    isValid = false;
+                    message = 'Email invalide';
+                }
+            }
+
+            if (input.value.trim()) {
+                if (isValid) {
+                    input.classList.add('valid');
+                } else {
+                    input.classList.add('invalid');
+                    feedback.textContent = message;
+                    feedback.classList.add('error');
+                }
+            }
+
+            updateSubmitButton();
+        }
+    });
+
+    function updateSubmitButton() {
+        const requiredInputs = Array.from(inputs).filter(i => i.hasAttribute('required'));
+        const allValid = requiredInputs.every(input => {
+            if (input.type === 'email') return isValidEmail(input.value);
+            return input.value.trim().length > 0;
         });
-});
+
+        submitButton.disabled = !allValid;
+    }
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Récupérer les données
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        // Validation finale
+        if (!data.from_name || !data.email || !data.message) {
+            showNotification('Veuillez remplir tous les champs obligatoires', 'error');
+            return;
+        }
+
+        if (!isValidEmail(data.email)) {
+            showNotification('Veuillez entrer une adresse email valide', 'error');
+            return;
+        }
+
+        // État chargement
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
+
+        // Envoi EmailJS
+        emailjs.send('service_vegi2hi', 'template_ot8e26r', {
+            from_name: data.from_name,
+            email: data.email,
+            phone: data.phone || 'Non fourni',
+            message: data.message
+        })
+            .then(function () {
+                showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
+                contactForm.reset();
+                // Reset validation states
+                inputs.forEach(input => {
+                    input.classList.remove('valid', 'invalid');
+                });
+                updateSubmitButton();
+            }, function (error) {
+                console.error('FAILED...', error);
+                showNotification('Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
+            })
+            .finally(function () {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+                updateSubmitButton(); // Re-vérifier l'état (sera désactivé car form reset)
+            });
+    });
+
+    // État initial du bouton
+    updateSubmitButton();
+}
 
 // Animation au scroll
 // Flip des cartes de tarifs au clic sur mobile et au hover sur desktop
