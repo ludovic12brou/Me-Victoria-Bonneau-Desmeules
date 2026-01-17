@@ -228,11 +228,14 @@ body {
 
     /* Force dark text on white mobile menu */
     .nav-menu a {
-        color: var(--text-dark);
+        color: #1f3a52 !important;
+        /* Force dark blue explicitly */
         display: block;
         padding: 1rem;
         width: 100%;
         text-align: center;
+        font-weight: 600;
+        /* Make it slightly bolder to ensure readability */
     }
 
     .nav-menu a:hover {
@@ -246,7 +249,9 @@ body {
         padding: 1rem;
         font-size: 1.1rem;
         margin-top: 0;
-        color: var(--text-dark);
+        color: #1f3a52 !important;
+        /* Force dark blue explicitly */
+        font-weight: 600;
         /* Visible on white background */
     }
 
