@@ -12,12 +12,14 @@
     display: inline-block;
     text-shadow: none;
 }
+
 .tarif-steps {
     list-style: none;
     padding: 0;
     margin: 0 0 0.5em 0;
     width: 100%;
 }
+
 .tarif-steps li {
     display: flex;
     align-items: flex-start;
@@ -27,6 +29,7 @@
     padding-left: 0.2em;
     color: #fff;
 }
+
 .tarif-steps li::before {
     content: "\f058";
     font-family: "Font Awesome 6 Free";
@@ -35,7 +38,9 @@
     font-size: 1.1em;
     margin-top: 0.1em;
 }
-.tarifs-card-front ul, .tarifs-card-back ul {
+
+.tarifs-card-front ul,
+.tarifs-card-back ul {
     padding-left: 0.7em;
     margin: 0.5em 0 0.5em 0;
     list-style-position: inside;
@@ -44,13 +49,15 @@
     line-height: 1.6;
 }
 
-.tarifs-card-front li, .tarifs-card-back li {
+.tarifs-card-front li,
+.tarifs-card-back li {
     margin-left: 0;
     padding-left: 0;
     text-indent: 0;
     line-height: 1.4;
     text-align: justify;
 }
+
 /* Variables et Styles de base */
 :root {
     --primary-color: #1f3a52;
@@ -155,6 +162,7 @@ body {
         border-radius: 0;
         padding: 0.5em 0.7em;
     }
+
     .menu-toggle span {
         width: 32px;
         height: 4px;
@@ -183,8 +191,9 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: flex-start; /* align items to the top so the image lines up with the top of the bio */
-        flex: 1 1 50%;
+    align-items: flex-start;
+    /* align items to the top so the image lines up with the top of the bio */
+    flex: 1 1 50%;
     padding: 0 20px;
 }
 
@@ -199,7 +208,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     margin-left: auto;
-    align-self: flex-end; /* align the image container to the bottom of the row */
+    align-self: flex-end;
+    /* align the image container to the bottom of the row */
 }
 
 /* Rounded framed image (larger) */
@@ -211,10 +221,11 @@ body {
     width: 100%;
     max-width: 360px;
     border-radius: var(--border-radius);
-    overflow: hidden; /* clip the image to rounded corners */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-    border: 4px solid rgba(255,255,255,0.06);
-    background-color: rgba(255,255,255,0.03);
+    overflow: hidden;
+    /* clip the image to rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    border: 4px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.03);
     flex-shrink: 0;
 }
 
@@ -278,6 +289,7 @@ body {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -396,7 +408,7 @@ body {
     align-items: stretch;
     justify-content: center;
     box-sizing: border-box;
-    box-shadow: 0 12px 40px rgba(30,60,120,0.18);
+    box-shadow: 0 12px 40px rgba(30, 60, 120, 0.18);
     transition: box-shadow 0.35s, transform 0.35s;
 }
 
@@ -416,7 +428,8 @@ body {
     transform: rotateY(180deg);
 }
 
-.tarifs-card-front, .tarifs-card-back {
+.tarifs-card-front,
+.tarifs-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -452,10 +465,48 @@ body {
     padding: 1.5rem 1.2rem 1.5rem 1.2rem;
     text-align: left;
     overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    max-height: 100%;
+    position: relative;
+}
+
+/* Bouton de fermeture pour les cartes sur mobile */
+.card-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 0;
+    font-weight: 300;
+}
+
+.card-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.card-close-btn:active {
+    transform: scale(0.95);
 }
 
 .tarifs-card:hover {
-    box-shadow: 0 16px 40px rgba(30,60,120,0.18);
+    box-shadow: 0 16px 40px rgba(30, 60, 120, 0.18);
     transform: translateY(-6px) scale(1.02);
 }
 
@@ -466,11 +517,12 @@ body {
     font-size: 1.35rem;
     margin-bottom: 0.7em;
     color: var(--accent-light);
-    background: rgba(255,255,255,0.10);
+    background: rgba(255, 255, 255, 0.10);
     border-radius: 14px;
     padding: 0.4em 1em;
-    box-shadow: 0 2px 8px rgba(30,60,120,0.10);
+    box-shadow: 0 2px 8px rgba(30, 60, 120, 0.10);
 }
+
 .tarifs-card-back ul {
     margin-top: 0.7em;
     padding-left: 1.2em;
@@ -524,9 +576,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(30,60,120,0.10);
+    box-shadow: 0 4px 18px rgba(30, 60, 120, 0.10);
     padding: 2.2rem 2rem;
     width: 100%;
     max-width: none;
@@ -540,7 +592,7 @@ body {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 10px;
     padding: 0.7rem 1rem;
     margin-bottom: 0.7rem;
@@ -550,7 +602,7 @@ body {
     font-size: 2.3rem;
     color: var(--text-light);
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 6px rgba(30,60,120,0.12));
+    filter: drop-shadow(0 2px 6px rgba(30, 60, 120, 0.12));
 }
 
 .info-item h4 {
@@ -589,24 +641,27 @@ body {
     width: 100%;
     max-width: none;
     margin: 0;
-        background: rgba(255,255,255,0.08);
-        border-radius: 16px;
-        box-shadow: 0 4px 18px rgba(30,60,120,0.10);
-        padding: 2.2rem 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(30, 60, 120, 0.10);
+    padding: 2.2rem 2rem;
     flex: 1 1 100%;
     min-width: 0;
     width: 100%;
 }
+
 @media (max-width: 900px) {
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     .contact-info,
     .contact-form {
         max-width: 100%;
         margin: 0 auto;
     }
+
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -615,14 +670,16 @@ body {
         left: 0;
         width: 100vw;
         background: #fff;
-        box-shadow: 0 8px 32px rgba(30,60,120,0.13);
+        box-shadow: 0 8px 32px rgba(30, 60, 120, 0.13);
         z-index: 1000;
         padding: 1.2em 0;
         border-radius: 0 0 12px 12px;
     }
+
     .nav-menu.active {
         display: flex;
     }
+
     .menu-toggle {
         display: block;
         position: relative;
@@ -632,6 +689,7 @@ body {
         border-radius: 0;
         padding: 0.5em 0.7em;
     }
+
     .menu-toggle span {
         width: 32px;
         height: 4px;
@@ -656,7 +714,7 @@ body {
 }
 
 .form-group {
-        max-width: unset;
+    max-width: unset;
     flex-direction: column;
     width: 100%;
     margin-bottom: 0.5rem;
@@ -729,9 +787,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-        .tarifs-grid {
-            grid-template-columns: 1fr;
-        }
+    .tarifs-grid {
+        grid-template-columns: 1fr;
+    }
+
     .menu-toggle {
         display: flex;
     }
@@ -827,10 +886,12 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .hero-content-wrapper {
         width: 100%;
         margin-bottom: 2.2em;
     }
+
     .hero-image {
         margin-left: auto;
         margin-right: auto;

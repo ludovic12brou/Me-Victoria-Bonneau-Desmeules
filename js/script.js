@@ -96,20 +96,78 @@ document.addEventListener('DOMContentLoaded', function () {
     const tarifCards = document.querySelectorAll('.tarifs-card');
 
     tarifCards.forEach(card => {
-        // Sur mobile, on ajoute un événement de clic pour retourner la carte
-        card.addEventListener('click', function (e) {
-            if (isMobile()) {
-                e.preventDefault();
-                const cardInner = this.querySelector('.tarifs-card-inner');
-                cardInner.classList.toggle('flipped');
-            }
-        });
+        let touchStartY = 0;
+        let touchEndY = 0;
+        let isScrolling = false;
 
-        // Empêcher le comportement par défaut sur les appareils tactiles
+        // Ajouter un bouton de fermeture sur la carte retournée pour mobile
+        const cardBack = card.querySelector('.tarifs-card-back');
+
+        if (cardBack && isMobile()) {
+            // Créer le bouton de fermeture
+            const closeButton = document.createElement('button');
+            closeButton.innerHTML = '×';
+            closeButton.className = 'card-close-btn';
+            closeButton.setAttribute('aria-label', 'Fermer');
+
+            // Ajouter le bouton au début de la carte retournée
+            cardBack.insertBefore(closeButton, cardBack.firstChild);
+
+            // Gérer le clic sur le bouton de fermeture
+            closeButton.addEventListener('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                const cardInner = card.querySelector('.tarifs-card-inner');
+                cardInner.classList.remove('flipped');
+            });
+        }
+
+        if (cardBack) {
+            cardBack.addEventListener('touchstart', function (e) {
+                // Ne pas empêcher la propagation pour permettre la détection du scroll
+                const target = e.target;
+                if (target.classList.contains('card-close-btn')) {
+                    return; // Laisser le bouton gérer son propre événement
+                }
+            }, { passive: true });
+
+            cardBack.addEventListener('click', function (e) {
+                // Empêcher le flip seulement si ce n'est pas le bouton de fermeture
+                if (!e.target.classList.contains('card-close-btn')) {
+                    e.stopPropagation();
+                }
+            });
+        }
+
+        // Détecter si c'est un scroll ou un tap
         card.addEventListener('touchstart', function (e) {
             if (isMobile()) {
-                // On laisse le clic gérer le flip
-                e.stopPropagation();
+                touchStartY = e.touches[0].clientY;
+                isScrolling = false;
+            }
+        }, { passive: true });
+
+        card.addEventListener('touchmove', function (e) {
+            if (isMobile()) {
+                touchEndY = e.touches[0].clientY;
+                // Si le mouvement vertical est supérieur à 10px, c'est un scroll
+                if (Math.abs(touchEndY - touchStartY) > 10) {
+                    isScrolling = true;
+                }
+            }
+        }, { passive: true });
+
+        // Sur mobile, on ajoute un événement de clic pour retourner la carte
+        card.addEventListener('click', function (e) {
+            if (isMobile() && !isScrolling) {
+                // Ne flip que si on ne scrolle pas et qu'on ne clique pas sur le contenu de la carte retournée
+                const cardInner = this.querySelector('.tarifs-card-inner');
+                const clickedOnBack = e.target.closest('.tarifs-card-back');
+
+                if (!clickedOnBack) {
+                    e.preventDefault();
+                    cardInner.classList.toggle('flipped');
+                }
             }
         });
     });
