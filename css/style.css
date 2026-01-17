@@ -184,14 +184,18 @@ body {
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
+    /* Same padding as links */
     border-radius: var(--border-radius);
     font-weight: 500;
     transition: var(--transition);
-    display: flex;
+    display: inline-flex;
+    /* Use inline-flex to behave more like text links */
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     /* Match general nav feel if needed, though links are mixed case usually */
+    margin-top: -2px;
+    /* Slight adjustment to align visually with text baseline */
 }
 
 .lang-btn:hover {
@@ -211,6 +215,8 @@ body {
         padding: 1rem;
         /* Larger touch target on mobile */
         font-size: 1.1rem;
+        margin-top: 0;
+        /* Reset margin on mobile */
     }
 }
 
@@ -754,15 +760,28 @@ body {
 .contact-form button {
     align-self: center;
     margin-top: 1.2rem;
-    font-size: 1.08rem;
-    padding: 14px 38px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(60, 80, 120, 0.09);
+    font-size: 1.05rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    /* Rounded pill shape like other buttons */
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--primary-color) 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(30, 60, 120, 0.2);
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 60, 120, 0.3);
 }
 
 .contact-form button:disabled {
-    background-color: #a0b3c6;
+    background: #ccc;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
