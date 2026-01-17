@@ -129,6 +129,11 @@ body {
     transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
+    display: flex;
+    /* Make links flex containers too for identical behavior */
+    align-items: center;
+    line-height: normal;
+    /* Strict reset */
 }
 
 .nav-menu a:hover {
@@ -179,6 +184,7 @@ body {
 }
 
 /* Language Toggle Button - Style Styled like nav links */
+/* Language Toggle Button - Style Styled like nav links */
 .lang-btn {
     background: transparent;
     border: none;
@@ -192,13 +198,17 @@ body {
     border-radius: var(--border-radius);
     font-weight: 500;
     transition: var(--transition);
-    display: inline-flex;
-    /* Use inline-flex to behave more like text links */
+    display: flex;
+    /* Changed from inline-flex to flex for simpler centering props */
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     /* Match general nav feel if needed, though links are mixed case usually */
-    margin-top: 0;
+    margin: 0;
+    /* Strict reset */
+    line-height: normal;
+    /* Reset line-height to avoid inheritance issues */
+    height: auto;
 }
 
 .lang-btn:hover {
@@ -210,7 +220,11 @@ body {
     .nav-menu li {
         width: 100%;
         text-align: center;
+        display: flex;
+        /* Ensure li behaves as flex container too if needed, or just block */
+        justify-content: center;
     }
+
 
     /* Force dark text on white mobile menu */
     .nav-menu a {
