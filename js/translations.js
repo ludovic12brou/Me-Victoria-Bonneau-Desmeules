@@ -4,6 +4,7 @@ window.translations = {
         nav_services: "Services",
         nav_rates: "Tarifs",
         nav_contact: "Contact",
+        header_title: "Me Victoria Bonneau Desmeules - Avocate",
 
         hero_title: "Un service juridique sur mesure, pour vous et votre famille",
         hero_name: "Me Victoria Bonneau Desmeules",
@@ -133,6 +134,7 @@ window.translations = {
         nav_services: "Services",
         nav_rates: "Rates",
         nav_contact: "Contact",
+        header_title: "Me Victoria Bonneau Desmeules - Lawyer",
 
         hero_title: "Tailored legal services for you and your family",
         hero_name: "Me Victoria Bonneau Desmeules",
