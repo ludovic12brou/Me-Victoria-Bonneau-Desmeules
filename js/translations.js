@@ -1,0 +1,260 @@
+const translations = {
+    fr: {
+        nav_home: "Accueil",
+        nav_services: "Services",
+        nav_rates: "Tarifs",
+        nav_contact: "Contact",
+
+        hero_title: "Un service juridique sur mesure, pour vous et votre famille",
+        hero_name: "Me Victoria Bonneau Desmeules",
+        hero_subtitle: "Avocate spécialisée principalement en droit familial",
+        hero_cta: "Nous contacter",
+        hero_desc: "Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet <a href=\"https://ctmbavocats.com\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">DCTMB Avocats</a>. Diplômée en droit de l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche bienveillante. Elle offre également divers services connexes au droit, mettant à profit ses compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et sa rigueur contribuent activement à la réputation d'excellence du cabinet.",
+
+        services_title: "Nos services",
+        services_availability: "Services disponibles en présentiel et à distance pour plus de flexibilité.",
+
+        service_divorce_title: "Divorce",
+        service_divorce_desc: "Conseil et représentation pour les procédures de séparation et divorce. Assistance complète pour les aspects légaux et administratifs.",
+
+        service_amiable_title: "Divorce à l'amiable",
+        service_amiable_desc: "Accompagnement et rédaction d'ententes pour un divorce par consentement mutuel, rapide et respectueux des intérêts de chacun.",
+
+        service_custody_title: "Demande pour garde d'enfants",
+        service_custody_desc: "Défense de vos intérêts et de ceux de vos enfants dans les questions de garde, de droits d'accès et de pensions alimentaires.",
+
+        service_succession_title: "Succession et Patrimoine",
+        service_succession_desc: "Accompagnement dans les questions de succession et de testament.",
+
+        service_alimony_title: "Pension alimentaire",
+        service_alimony_desc: "Demande en fixation ou en modification de pension alimentaire pour enfants et/ou pour ex-époux.",
+
+        service_legal_advice_title: "Conseils Juridiques",
+        service_legal_advice_desc: "Consultation personnalisée et accompagnement juridique pour toutes vos questions relatives au droit familial.",
+
+        service_demand_title: "Mise en Demeure",
+        service_demand_desc: "Rédaction et envoi de mises en demeure pour défendre vos droits et vos intérêts de manière formelle.",
+
+        rates_title: "Tarifs",
+        rates_desc: "Vous trouverez ci-bas nos tarifs pour certains des services offerts.",
+
+        rate_demand_title: "Mise en demeure",
+        rate_demand_price: "550$ CAD",
+        rate_demand_subtitle: "Mise en demeure",
+        rate_demand_step1: "Rencontre initiale (30 minutes)",
+        rate_demand_step2: "Rédaction de la mise en demeure",
+        rate_demand_step3: "Envoi par huissier (frais de huissier non-inclus)",
+
+        rate_advice_title: "Conseils juridiques",
+        rate_advice_price: "150$ CAD / heure",
+        rate_advice_subtitle: "Conseils juridiques",
+        rate_advice_step1: "Rencontre par visioconférence",
+
+        rate_uncontested_title: "Divorce non-contesté",
+        rate_uncontested_price: "1 500$ CAD",
+        rate_uncontested_subtitle: "Divorce non-contesté",
+        rate_uncontested_step1: "Rencontre initiale (1h)",
+        rate_uncontested_step2: "Rédaction de la demande conjointe de divorce",
+        rate_uncontested_step3: "Préparation des déclarations sous serment des parties",
+        rate_uncontested_step4: "Rédaction de la convention de divorce",
+        rate_uncontested_step5: "Dépôt à la cour",
+        rate_uncontested_step6: "Timbre judiciaire non-inclu, environ 365$",
+
+        rate_contested_title: "Divorce contesté",
+        rate_contested_price: "1 700$ CAD",
+        rate_contested_subtitle: "Divorce contesté",
+        rate_contested_step1: "Rencontre initiale (1h30)",
+        rate_contested_step2: "Rédaction de la demande introductive d’instance en divorce",
+        rate_contested_step3: "Rédaction des déclarations sous serment",
+        rate_contested_step4: "Préparation de l’avis de présentation",
+        rate_contested_step5: "Dépôt à la cour - timbre judiciaire non-inclus (environ 365$)",
+        rate_contested_step6: "Signification (Frais de huissier non-inclus)",
+        rate_contested_step7: "Préparation des documents et formulaires requis (Pièces, Annexe I, Formulaire III, etc.)",
+        rate_contested_step8: "Représentation à la cour non-inclus",
+
+        rate_contested_family_title: "Procédure contestée en matière familiale",
+        rate_contested_family_subtitle1: "(Demande en garde d’enfants et/ou pour pension alimentaire)",
+        rate_contested_family_price: "1 600$ CAD",
+        rate_contested_family_subtitle2: "Procédure contestée en matière familiale",
+        rate_contested_family_step1: "Demande introductive ou demande en modification d’un jugement précédent",
+        rate_contested_family_step2: "Rencontre initiale (1h30)",
+        rate_contested_family_step3: "Rédaction de la demande initiale",
+        rate_contested_family_step4: "Préparation des pièces et des formulaires requis (Annexes I, preuves de revenus, etc.)",
+        rate_contested_family_step5: "Préparation de l’avis de présentation",
+        rate_contested_family_step6: "Signification (frais de huissier non-inclus)",
+        rate_contested_family_step7: "Dépôt à la cour - timbre judiciaire non inclus (environ 177$)",
+        rate_contested_family_step8: "Représentation à la cour non-inclus",
+
+        rate_uncontested_family_title: "Procédures non-contestées en matière familiale",
+        rate_uncontested_family_subtitle1: "(Demande en garde d’enfants et/ou pour pension alimentaire)",
+        rate_uncontested_family_price: "1 300$ CAD",
+        rate_uncontested_family_subtitle2: "Procédures non-contestées en matière familiale",
+        rate_uncontested_family_step1: "Rencontre initiale (1h)",
+        rate_uncontested_family_step2: "Rédaction de la demande initiale ou de la demande en modification",
+        rate_uncontested_family_step3: "Préparation des pièces et des formulaires requis (Annexe I, déclaration 444, preuves de revenus)",
+        rate_uncontested_family_step4: "Préparation de la déclaration sous serment",
+        rate_uncontested_family_step5: "Dépôt à la cour - timbre judiciaire non-inclus (environ 177$)",
+
+        contact_title: "Nous contacter",
+        contact_desc: "N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.",
+        contact_info_title: "Informations de contact",
+        contact_phone: "Téléphone",
+        contact_email: "Email",
+        contact_address: "Adresse",
+        contact_farewell: "Au plaisir de faire affaire avec vous!",
+
+        contact_form_title: "Formulaire de contact",
+        contact_placeholder_name: "Votre nom",
+        contact_placeholder_email: "Votre email",
+        contact_placeholder_phone: "Votre téléphone",
+        contact_placeholder_message: "Votre message",
+        contact_btn_send: "Envoyer",
+        contact_btn_sending: "Envoi en cours...",
+
+        footer_rights: "&copy; 2025 Me Victoria Bonneau Desmeules. Tous droits réservés.",
+        footer_legal: "Mention légale",
+
+        legal_title: "Mention légale",
+        legal_editor: "<strong>Éditeur du site :</strong> Me Victoria Bonneau Desmeules, 400 boul. Jean-Lesage, Suite 550, Québec, QC, G1K 8W1.",
+        legal_contact: "<strong>Contact :</strong> v.bonneau-desmeules@vbdavocate.com | (418) 720-5055",
+        legal_ip: "<strong>Propriété intellectuelle :</strong> Tous les contenus présents sur ce site (textes, images, logos, etc.) sont la propriété exclusive de Me Victoria Bonneau Desmeules, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, est interdite sans autorisation préalable.",
+        legal_responsibility: "<strong>Responsabilité :</strong> Les informations fournies sur ce site sont à titre indicatif et ne sauraient constituer un conseil juridique personnalisé. Me Victoria Bonneau Desmeules ne saurait être tenue responsable de l’utilisation qui pourrait en être faite.",
+        legal_data: "<strong>Données personnelles :</strong> Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre aux demandes et ne sont pas conservées ni transmises à des tiers. Conformément à la loi, vous pouvez demander la suppression ou la modification de vos données en contactant l’éditeur.",
+
+        // Notification messages
+        msg_required_fields: "Veuillez remplir tous les champs obligatoires",
+        msg_invalid_email: "Veuillez entrer une adresse email valide",
+        msg_success: "Message envoyé avec succès! Nous vous répondrons bientôt.",
+        msg_error: "Erreur lors de l'envoi. Veuillez réessayer.",
+        msg_required: "Ce champ est requis"
+    },
+    en: {
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_rates: "Rates",
+        nav_contact: "Contact",
+
+        hero_title: "Tailored legal services for you and your family",
+        hero_name: "Me Victoria Bonneau Desmeules",
+        hero_subtitle: "Lawyer specializing mainly in family law",
+        hero_cta: "Contact Us",
+        hero_desc: "Victoria Bonneau Desmeules is a passionate and dynamic lawyer at <a href=\"https://ctmbavocats.com\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">DCTMB Avocats</a>. A law graduate from Université Laval, she practices primarily in family law, a field in which she supports her clients with empathy and professionalism. With deeply rooted family values, she stands out for her humanity, her ability to listen, and her caring approach. She also offers various services related to law, using her solid skills to offer solutions adapted to each situation. Her commitment and rigor actively contribute to the firm's reputation for excellence.",
+
+        services_title: "Our Services",
+        services_availability: "Services available in person and remotely for greater flexibility.",
+
+        service_divorce_title: "Divorce",
+        service_divorce_desc: "Advice and representation for separation and divorce proceedings. Complete assistance for legal and administrative aspects.",
+
+        service_amiable_title: "Amicable Divorce",
+        service_amiable_desc: "Support and drafting of agreements for divorce by mutual consent, fast and respectful of everyone's interests.",
+
+        service_custody_title: "Child Custody Application",
+        service_custody_desc: "Defense of your interests and those of your children in matters of custody, access rights, and child support.",
+
+        service_succession_title: "Succession and Estate",
+        service_succession_desc: "Support in matters of succession and wills.",
+
+        service_alimony_title: "Alimony / Child Support",
+        service_alimony_desc: "Application for fixation or modification of child support and/or for ex-spouse.",
+
+        service_legal_advice_title: "Legal Advice",
+        service_legal_advice_desc: "Personalized consultation and legal support for all your questions regarding family law.",
+
+        service_demand_title: "Formal Demand Letter",
+        service_demand_desc: "Drafting and sending formal notices to defend your rights and interests formally.",
+
+        rates_title: "Rates",
+        rates_desc: "Below you will find our rates for some of the services offered.",
+
+        rate_demand_title: "Formal demand letter",
+        rate_demand_price: "$550 CAD",
+        rate_demand_subtitle: "Formal demand letter",
+        rate_demand_step1: "Initial meeting (30 minutes)",
+        rate_demand_step2: "Drafting of the formal notice",
+        rate_demand_step3: "Sending by bailiff (bailiff fees not included)",
+
+        rate_advice_title: "Legal advice",
+        rate_advice_price: "$150 CAD / hour",
+        rate_advice_subtitle: "Legal advice",
+        rate_advice_step1: "Meeting by videoconference",
+
+        rate_uncontested_title: "Uncontested divorce",
+        rate_uncontested_price: "$1,500 CAD",
+        rate_uncontested_subtitle: "Uncontested divorce",
+        rate_uncontested_step1: "Initial meeting (1h)",
+        rate_uncontested_step2: "Drafting of the joint divorce application",
+        rate_uncontested_step3: "Preparation of the parties' sworn statements",
+        rate_uncontested_step4: "Drafting of the divorce agreement",
+        rate_uncontested_step5: "Filing at court",
+        rate_uncontested_step6: "Court stamp not included, approx. $365",
+
+        rate_contested_title: "Contested divorce",
+        rate_contested_price: "$1,700 CAD",
+        rate_contested_subtitle: "Contested divorce",
+        rate_contested_step1: "Initial meeting (1h30)",
+        rate_contested_step2: "Drafting of the divorce application",
+        rate_contested_step3: "Drafting of sworn statements",
+        rate_contested_step4: "Preparation of the presentation notice",
+        rate_contested_step5: "Filing at court - court stamp not included (approx. $365)",
+        rate_contested_step6: "Service (Bailiff fees not included)",
+        rate_contested_step7: "Preparation of required documents and forms (Exhibits, Annex I, Form III, etc.)",
+        rate_contested_step8: "Court representation not included",
+
+        rate_contested_family_title: "Contested procedure in family matters",
+        rate_contested_family_subtitle1: "(Application for child custody and/or child support)",
+        rate_contested_family_price: "$1,600 CAD",
+        rate_contested_family_subtitle2: "Contested procedure in family matters",
+        rate_contested_family_step1: "Introductory application or modification application of a previous judgment",
+        rate_contested_family_step2: "Initial meeting (1h30)",
+        rate_contested_family_step3: "Drafting of the initial application",
+        rate_contested_family_step4: "Preparation of exhibits and required forms (Annex I, proof of income, etc.)",
+        rate_contested_family_step5: "Preparation of the presentation notice",
+        rate_contested_family_step6: "Service (bailiff fees not included)",
+        rate_contested_family_step7: "Filing at court - court stamp not included (approx. $177)",
+        rate_contested_family_step8: "Court representation not included",
+
+        rate_uncontested_family_title: "Uncontested procedures in family matters",
+        rate_uncontested_family_subtitle1: "(Application for child custody and/or child support)",
+        rate_uncontested_family_price: "$1,300 CAD",
+        rate_uncontested_family_subtitle2: "Uncontested procedures in family matters",
+        rate_uncontested_family_step1: "Initial meeting (1h)",
+        rate_uncontested_family_step2: "Drafting of the initial application or modification application",
+        rate_uncontested_family_step3: "Preparation of exhibits and required forms (Annex I, declaration 444, proof of income)",
+        rate_uncontested_family_step4: "Preparation of sworn statement",
+        rate_uncontested_family_step5: "Filing at court - court stamp not included (approx. $177)",
+
+        contact_title: "Contact Us",
+        contact_desc: "Do not hesitate to contact us, we will answer you as soon as possible.",
+        contact_info_title: "Contact Information",
+        contact_phone: "Phone",
+        contact_email: "Email",
+        contact_address: "Address",
+        contact_farewell: "We look forward to doing business with you!",
+
+        contact_form_title: "Contact Form",
+        contact_placeholder_name: "Your name",
+        contact_placeholder_email: "Your email",
+        contact_placeholder_phone: "Your phone",
+        contact_placeholder_message: "Your message",
+        contact_btn_send: "Send",
+        contact_btn_sending: "Sending...",
+
+        footer_rights: "&copy; 2025 Me Victoria Bonneau Desmeules. All rights reserved.",
+        footer_legal: "Legal Notice",
+
+        legal_title: "Legal Notice",
+        legal_editor: "<strong>Site Editor:</strong> Me Victoria Bonneau Desmeules, 400 boul. Jean-Lesage, Suite 550, Quebec, QC, G1K 8W1.",
+        legal_contact: "<strong>Contact:</strong> v.bonneau-desmeules@vbdavocate.com | (418) 720-5055",
+        legal_ip: "<strong>Intellectual Property:</strong> All content on this site (texts, images, logos, etc.) is the exclusive property of Me Victoria Bonneau Desmeules, unless otherwise stated. Any reproduction, representation or distribution, in whole or in part, is prohibited without prior authorization.",
+        legal_responsibility: "<strong>Liability:</strong> The information provided on this site is for information purposes only and does not constitute personalized legal advice. Me Victoria Bonneau Desmeules cannot be held responsible for any use that may be made of it.",
+        legal_data: "<strong>Personal Data:</strong> The data collected via the contact form is used only to respond to requests and is not kept or transmitted to third parties. In accordance with the law, you can request the deletion or modification of your data by contacting the editor.",
+
+        // Notification messages
+        msg_required_fields: "Please fill in all required fields",
+        msg_invalid_email: "Please enter a valid email address",
+        msg_success: "Message sent successfully! We will get back to you soon.",
+        msg_error: "Error sending message. Please try again.",
+        msg_required: "This field is required"
+    }
+};

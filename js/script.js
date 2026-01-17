@@ -1,3 +1,50 @@
+// Langue par défaut
+let currentLang = localStorage.getItem('site_lang') || (navigator.language.startsWith('en') ? 'en' : 'fr');
+
+// Fonction de mise à jour de la langue
+function updateLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('site_lang', lang);
+    document.documentElement.lang = lang;
+
+    // Mettre à jour les textes
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            // Si c'est un lien email avec <wbr>, on gère différemment ou on met juste le texte
+            // Pour simplifier, on injecte le HTML pour permettre les liens et formattage
+            element.innerHTML = translations[lang][key];
+        }
+    });
+
+    // Mettre à jour les placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+        }
+    });
+
+    // Mettre à jour le bouton de langue
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) {
+        langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
+    }
+}
+
+// Initialisation de la langue
+document.addEventListener('DOMContentLoaded', () => {
+    updateLanguage(currentLang);
+
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateLanguage(newLang);
+        });
+    }
+});
+
 // Menu mobile toggle
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -45,7 +92,8 @@ function showNotification(message, type = 'success') {
     notification.className = `notification ${type}`;
 
     const icon = type === 'success' ? '<i class="fas fa-check"></i>' : '<i class="fas fa-exclamation"></i>';
-    const title = type === 'success' ? 'Succès' : 'Erreur';
+    // Titres statiques pour l'instant ou traduits si nécessaire, ici on simplifie
+    const title = type === 'success' ? (currentLang === 'fr' ? 'Succès' : 'Success') : (currentLang === 'fr' ? 'Erreur' : 'Error');
 
     notification.innerHTML = `
         <div class="notification-icon">${icon}</div>
@@ -107,11 +155,11 @@ if (contactForm) {
                 isValid = false;
                 // On n'affiche pas d'erreur immédiate si le champ est vide au focus, 
                 // seulement au blur ou si on a commencé à taper
-                if (input.value.length > 0) message = 'Ce champ est requis';
+                if (input.value.length > 0) message = translations[currentLang].msg_required;
             } else if (input.type === 'email' && input.value.trim()) {
                 if (!isValidEmail(input.value)) {
                     isValid = false;
-                    message = 'Email invalide';
+                    message = translations[currentLang].msg_invalid_email;
                 }
             }
 
@@ -148,19 +196,19 @@ if (contactForm) {
 
         // Validation finale
         if (!data.from_name || !data.email || !data.message) {
-            showNotification('Veuillez remplir tous les champs obligatoires', 'error');
+            showNotification(translations[currentLang].msg_required_fields, 'error');
             return;
         }
 
         if (!isValidEmail(data.email)) {
-            showNotification('Veuillez entrer une adresse email valide', 'error');
+            showNotification(translations[currentLang].msg_invalid_email, 'error');
             return;
         }
 
         // État chargement
         const originalText = submitButton.textContent;
         submitButton.disabled = true;
-        submitButton.textContent = 'Envoi en cours...';
+        submitButton.textContent = translations[currentLang].contact_btn_sending;
 
         // Envoi EmailJS
         emailjs.send('service_vegi2hi', 'template_ot8e26r', {
@@ -170,7 +218,7 @@ if (contactForm) {
             message: data.message
         })
             .then(function () {
-                showNotification('Message envoyé avec succès! Nous vous répondrons bientôt.', 'success');
+                showNotification(translations[currentLang].msg_success, 'success');
                 contactForm.reset();
                 // Reset validation states
                 inputs.forEach(input => {
@@ -179,11 +227,11 @@ if (contactForm) {
                 updateSubmitButton();
             }, function (error) {
                 console.error('FAILED...', error);
-                showNotification('Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
+                showNotification(translations[currentLang].msg_error, 'error');
             })
             .finally(function () {
                 submitButton.disabled = false;
-                submitButton.textContent = originalText;
+                submitButton.textContent = translations[currentLang].contact_btn_send;
                 updateSubmitButton(); // Re-vérifier l'état (sera désactivé car form reset)
             });
     });

@@ -110,11 +110,15 @@
                     <i class="fas fa-bars" style="color: var(--text-light); font-size: 1rem;"></i>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#tarifs">Tarifs</a></li>
-                    <li><a href="#contact">Contact</a></li>
-
+                    <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                    <li><a href="#tarifs" data-i18n="nav_rates">Tarifs</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li>
+                        <button id="langToggle" class="lang-btn">
+                            FR | EN
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -125,15 +129,17 @@
         <div class="hero-inner container">
             <div class="hero-content-wrapper">
                 <div class="hero-content">
-                    <h1 class="hero-title-full">Un service juridique sur mesure, pour vous et votre famille</h1>
-                    <p>Me Victoria Bonneau Desmeules</p>
-                    <p class="subtitle">Avocate spécialisée principalement en droit familial</p>
-                    <a href="#contact" class="btn btn-primary">Nous contacter</a>
+                    <h1 class="hero-title-full" data-i18n="hero_title">Un service juridique sur mesure, pour vous et
+                        votre famille</h1>
+                    <p data-i18n="hero_name">Me Victoria Bonneau Desmeules</p>
+                    <p class="subtitle" data-i18n="hero_subtitle">Avocate spécialisée principalement en droit familial
+                    </p>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Nous contacter</a>
                 </div>
 
                 <div class="hero-description">
-                    <p>Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet <a
-                            href="https://ctmbavocats.com" target="_blank" rel="noopener"
+                    <p data-i18n="hero_desc">Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein
+                        du cabinet <a href="https://ctmbavocats.com" target="_blank" rel="noopener"
                             style="color:inherit; text-decoration:underline;">DCTMB Avocats</a>. Diplômée en droit de
                         l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel
                         elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales
@@ -152,16 +158,18 @@
     <!-- Section Services -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Nos services</h2>
-            <p class="service-availability">Services disponibles en présentiel et à distance pour plus de flexibilité.
+            <h2 data-i18n="services_title">Nos services</h2>
+            <p class="service-availability" data-i18n="services_availability">Services disponibles en présentiel et à
+                distance pour plus de flexibilité.
             </p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-ring"></i>
                     </div>
-                    <h3>Divorce</h3>
-                    <p>Conseil et représentation pour les procédures de séparation et divorce. Assistance complète pour
+                    <h3 data-i18n="service_divorce_title">Divorce</h3>
+                    <p data-i18n="service_divorce_desc">Conseil et représentation pour les procédures de séparation et
+                        divorce. Assistance complète pour
                         les aspects légaux et administratifs.</p>
                 </div>
 
@@ -169,8 +177,9 @@
                     <div class="service-icon">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
-                    <h3>Divorce à l'amiable</h3>
-                    <p>Accompagnement et rédaction d'ententes pour un divorce par consentement mutuel, rapide et
+                    <h3 data-i18n="service_amiable_title">Divorce à l'amiable</h3>
+                    <p data-i18n="service_amiable_desc">Accompagnement et rédaction d'ententes pour un divorce par
+                        consentement mutuel, rapide et
                         respectueux des intérêts de chacun.</p>
                 </div>
 
@@ -178,8 +187,9 @@
                     <div class="service-icon">
                         <i class="fas fa-children"></i>
                     </div>
-                    <h3>Demande pour garde d'enfants</h3>
-                    <p>Défense de vos intérêts et de ceux de vos enfants dans les questions de garde, de droits d'accès
+                    <h3 data-i18n="service_custody_title">Demande pour garde d'enfants</h3>
+                    <p data-i18n="service_custody_desc">Défense de vos intérêts et de ceux de vos enfants dans les
+                        questions de garde, de droits d'accès
                         et de pensions alimentaires.</p>
                 </div>
 
@@ -187,16 +197,18 @@
                     <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Succession et Patrimoine</h3>
-                    <p>Accompagnement dans les questions de succession et de testament.</p>
+                    <h3 data-i18n="service_succession_title">Succession et Patrimoine</h3>
+                    <p data-i18n="service_succession_desc">Accompagnement dans les questions de succession et de
+                        testament.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fa-regular fa-money-bill-1"></i>
                     </div>
-                    <h3>Pension alimentaire</h3>
-                    <p>Demande en fixation ou en modification de pension alimentaire pour enfants et/ou pour ex-époux.
+                    <h3 data-i18n="service_alimony_title">Pension alimentaire</h3>
+                    <p data-i18n="service_alimony_desc">Demande en fixation ou en modification de pension alimentaire
+                        pour enfants et/ou pour ex-époux.
                     </p>
                 </div>
 
@@ -204,8 +216,9 @@
                     <div class="service-icon">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <h3>Conseils Juridiques</h3>
-                    <p>Consultation personnalisée et accompagnement juridique pour toutes vos questions relatives au
+                    <h3 data-i18n="service_legal_advice_title">Conseils Juridiques</h3>
+                    <p data-i18n="service_legal_advice_desc">Consultation personnalisée et accompagnement juridique pour
+                        toutes vos questions relatives au
                         droit familial.</p>
                 </div>
 
@@ -213,8 +226,9 @@
                     <div class="service-icon">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <h3>Mise en Demeure</h3>
-                    <p>Rédaction et envoi de mises en demeure pour défendre vos droits et vos intérêts de manière
+                    <h3 data-i18n="service_demand_title">Mise en Demeure</h3>
+                    <p data-i18n="service_demand_desc">Rédaction et envoi de mises en demeure pour défendre vos droits
+                        et vos intérêts de manière
                         formelle.</p>
                 </div>
             </div>
@@ -223,26 +237,28 @@
     <!-- Section Tarifs -->
     <section id="tarifs" class="tarifs">
         <div class="container">
-            <h2>Tarifs</h2>
-            <p class="service-availability">Vous trouverez ci-bas nos tarifs pour certains des services offerts.</p>
+            <h2 data-i18n="rates_title">Tarifs</h2>
+            <p class="service-availability" data-i18n="rates_desc">Vous trouverez ci-bas nos tarifs pour certains des
+                services offerts.</p>
             <div class="tarifs-grid">
                 <div class="tarifs-card">
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
-                            <h3>Mise en demeure</h3>
+                            <h3 data-i18n="rate_demand_title">Mise en demeure</h3>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">550$ CAD</div>
+                                <div class="tarif-badge" data-i18n="rate_demand_price">550$ CAD</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Mise
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_demand_subtitle">Mise
                                     en demeure</span>
                             </div>
                             <ul class="tarif-steps" style="font-size:0.75em;">
-                                <li>Rencontre initiale (30 minutes)</li>
-                                <li>Rédaction de la mise en demeure</li>
-                                <li>Envoi par huissier (frais de huissier non-inclus)</li>
+                                <li data-i18n="rate_demand_step1">Rencontre initiale (30 minutes)</li>
+                                <li data-i18n="rate_demand_step2">Rédaction de la mise en demeure</li>
+                                <li data-i18n="rate_demand_step3">Envoi par huissier (frais de huissier non-inclus)</li>
                             </ul>
                         </div>
                     </div>
@@ -251,17 +267,18 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-comments"></i></div>
-                            <h3>Conseils juridiques</h3>
+                            <h3 data-i18n="rate_advice_title">Conseils juridiques</h3>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">150$ CAD / heure</div>
+                                <div class="tarif-badge" data-i18n="rate_advice_price">150$ CAD / heure</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Conseils
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_advice_subtitle">Conseils
                                     juridiques</span>
                             </div>
                             <ul class="tarif-steps">
-                                <li>Rencontre par visioconférence</li>
+                                <li data-i18n="rate_advice_step1">Rencontre par visioconférence</li>
                             </ul>
                         </div>
                     </div>
@@ -270,22 +287,24 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                            <h3>Divorce non-contesté</h3>
+                            <h3 data-i18n="rate_uncontested_title">Divorce non-contesté</h3>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">1 500$ CAD</div>
+                                <div class="tarif-badge" data-i18n="rate_uncontested_price">1 500$ CAD</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Divorce
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_uncontested_subtitle">Divorce
                                     non-contesté</span>
                             </div>
                             <ul class="tarif-steps">
-                                <li>Rencontre initiale (1h)</li>
-                                <li>Rédaction de la demande conjointe de divorce</li>
-                                <li>Préparation des déclarations sous serment des parties</li>
-                                <li>Rédaction de la convention de divorce</li>
-                                <li>Dépôt à la cour</li>
-                                <li>Timbre judiciaire non-inclu, environ 365$</li>
+                                <li data-i18n="rate_uncontested_step1">Rencontre initiale (1h)</li>
+                                <li data-i18n="rate_uncontested_step2">Rédaction de la demande conjointe de divorce</li>
+                                <li data-i18n="rate_uncontested_step3">Préparation des déclarations sous serment des
+                                    parties</li>
+                                <li data-i18n="rate_uncontested_step4">Rédaction de la convention de divorce</li>
+                                <li data-i18n="rate_uncontested_step5">Dépôt à la cour</li>
+                                <li data-i18n="rate_uncontested_step6">Timbre judiciaire non-inclu, environ 365$</li>
                             </ul>
                         </div>
                     </div>
@@ -294,25 +313,29 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                            <h3>Divorce contesté</h3>
+                            <h3 data-i18n="rate_contested_title">Divorce contesté</h3>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">1 700$ CAD</div>
+                                <div class="tarif-badge" data-i18n="rate_contested_price">1 700$ CAD</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Divorce
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_contested_subtitle">Divorce
                                     contesté</span>
                             </div>
                             <ul class="tarif-steps">
-                                <li>Rencontre initiale (1h30)</li>
-                                <li>Rédaction de la demande introductive d’instance en divorce</li>
-                                <li>Rédaction des déclarations sous serment</li>
-                                <li>Préparation de l’avis de présentation</li>
-                                <li>Dépôt à la cour - timbre judiciaire non-inclus (environ 365$)</li>
-                                <li>Signification (Frais de huissier non-inclus)</li>
-                                <li>Préparation des documents et formulaires requis (Pièces, Annexe I, Formulaire III,
+                                <li data-i18n="rate_contested_step1">Rencontre initiale (1h30)</li>
+                                <li data-i18n="rate_contested_step2">Rédaction de la demande introductive d’instance en
+                                    divorce</li>
+                                <li data-i18n="rate_contested_step3">Rédaction des déclarations sous serment</li>
+                                <li data-i18n="rate_contested_step4">Préparation de l’avis de présentation</li>
+                                <li data-i18n="rate_contested_step5">Dépôt à la cour - timbre judiciaire non-inclus
+                                    (environ 365$)</li>
+                                <li data-i18n="rate_contested_step6">Signification (Frais de huissier non-inclus)</li>
+                                <li data-i18n="rate_contested_step7">Préparation des documents et formulaires requis
+                                    (Pièces, Annexe I, Formulaire III,
                                     etc.)</li>
-                                <li>Représentation à la cour non-inclus</li>
+                                <li data-i18n="rate_contested_step8">Représentation à la cour non-inclus</li>
                             </ul>
                         </div>
                     </div>
@@ -321,26 +344,32 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-                            <h3>Procédure contestée en matière familiale </h3>
-                            <h4>(Demande en garde d’enfants et/ou pour pension alimentaire)</h4>
+                            <h3 data-i18n="rate_contested_family_title">Procédure contestée en matière familiale </h3>
+                            <h4 data-i18n="rate_contested_family_subtitle1">(Demande en garde d’enfants et/ou pour
+                                pension alimentaire)</h4>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">1 600$ CAD</div>
+                                <div class="tarif-badge" data-i18n="rate_contested_family_price">1 600$ CAD</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Procédure
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_contested_family_subtitle2">Procédure
                                     contestée en matière familiale</span>
                             </div>
                             <ul class="tarif-steps">
-                                <li>Demande introductive ou demande en modification d’un jugement précédent</li>
-                                <li>Rencontre initiale (1h30)</li>
-                                <li>Rédaction de la demande initiale</li>
-                                <li>Préparation des pièces et des formulaires requis (Annexes I, preuves de revenus,
+                                <li data-i18n="rate_contested_family_step1">Demande introductive ou demande en
+                                    modification d’un jugement précédent</li>
+                                <li data-i18n="rate_contested_family_step2">Rencontre initiale (1h30)</li>
+                                <li data-i18n="rate_contested_family_step3">Rédaction de la demande initiale</li>
+                                <li data-i18n="rate_contested_family_step4">Préparation des pièces et des formulaires
+                                    requis (Annexes I, preuves de revenus,
                                     etc.)</li>
-                                <li>Préparation de l’avis de présentation</li>
-                                <li>Signification (frais de huissier non-inclus)</li>
-                                <li>Dépôt à la cour - timbre judiciaire non inclus (environ 177$)</li>
-                                <li>Représentation à la cour non-inclus</li>
+                                <li data-i18n="rate_contested_family_step5">Préparation de l’avis de présentation</li>
+                                <li data-i18n="rate_contested_family_step6">Signification (frais de huissier non-inclus)
+                                </li>
+                                <li data-i18n="rate_contested_family_step7">Dépôt à la cour - timbre judiciaire non
+                                    inclus (environ 177$)</li>
+                                <li data-i18n="rate_contested_family_step8">Représentation à la cour non-inclus</li>
                             </ul>
                         </div>
                     </div>
@@ -349,23 +378,30 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-file-signature"></i></div>
-                            <h3>Procédures non-contestées en matière familiale </h3>
-                            <h4>(Demande en garde d’enfants et/ou pour pension alimentaire)</h4>
+                            <h3 data-i18n="rate_uncontested_family_title">Procédures non-contestées en matière familiale
+                            </h3>
+                            <h4 data-i18n="rate_uncontested_family_subtitle1">(Demande en garde d’enfants et/ou pour
+                                pension alimentaire)</h4>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge">1 300$ CAD</div>
+                                <div class="tarif-badge" data-i18n="rate_uncontested_family_price">1 300$ CAD</div>
                                 <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;">Procédures
+                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
+                                    data-i18n="rate_uncontested_family_subtitle2">Procédures
                                     non-contestées en matière familiale</span>
                             </div>
                             <ul class="tarif-steps">
-                                <li>Rencontre initiale (1h)</li>
-                                <li>Rédaction de la demande initiale ou de la demande en modification</li>
-                                <li>Préparation des pièces et des formulaires requis (Annexe I, déclaration 444, preuves
+                                <li data-i18n="rate_uncontested_family_step1">Rencontre initiale (1h)</li>
+                                <li data-i18n="rate_uncontested_family_step2">Rédaction de la demande initiale ou de la
+                                    demande en modification</li>
+                                <li data-i18n="rate_uncontested_family_step3">Préparation des pièces et des formulaires
+                                    requis (Annexe I, déclaration 444, preuves
                                     de revenus)</li>
-                                <li>Préparation de la déclaration sous serment</li>
-                                <li>Dépôt à la cour - timbre judiciaire non-inclus (environ 177$)</li>
+                                <li data-i18n="rate_uncontested_family_step4">Préparation de la déclaration sous serment
+                                </li>
+                                <li data-i18n="rate_uncontested_family_step5">Dépôt à la cour - timbre judiciaire
+                                    non-inclus (environ 177$)</li>
                             </ul>
                         </div>
                     </div>
@@ -376,18 +412,20 @@
     <!-- Section Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Nous contacter</h2>
-            <p class="contact-message">N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.
+            <h2 data-i18n="contact_title">Nous contacter</h2>
+            <p class="contact-message" data-i18n="contact_desc">N'hésitez pas à nous contacter, nous vous répondrons
+                dans les plus brefs délais.
             </p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3 class="contact-info-title"
-                        style="text-align:center;margin-bottom:1.2em;color:var(--text-light);font-size:1.3rem;font-weight:600;">
+                        style="text-align:center;margin-bottom:1.2em;color:var(--text-light);font-size:1.3rem;font-weight:600;"
+                        data-i18n="contact_info_title">
                         Informations de contact</h3>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Téléphone</h4>
+                            <h4 data-i18n="contact_phone">Téléphone</h4>
                             <p><a href="tel:+14187205055">(418) 720-5055</a></p>
                         </div>
                     </div>
@@ -395,7 +433,7 @@
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact_email">Email</h4>
                             <p class="email-box"><a href="mailto:v.bonneau-desmeules@vbdavocate.com"
                                     class="email-adapt">v.bonneau<wbr>-desmeules<wbr>@vbdavocate<wbr>.com</a></p>
                         </div>
@@ -404,41 +442,44 @@
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Adresse</h4>
+                            <h4 data-i18n="contact_address">Adresse</h4>
                             <p><a href="https://maps.app.goo.gl/SzWN6xFdxboHuw7v6" target="_blank" rel="noopener"
                                     style="color:inherit; text-decoration:underline;">400 boul. Jean-Lesage<br>
                                     Suite 550<br>
                                     Québec, QC, G1K 8W1</a></p>
                         </div>
                     </div>
-                    <div
-                        style="margin-top:1.5em; text-align:center; color:var(--secondary); font-size:1.08rem; font-weight:500;">
+                    <div style="margin-top:1.5em; text-align:center; color:var(--secondary); font-size:1.08rem; font-weight:500;"
+                        data-i18n="contact_farewell">
                         Au plaisir de faire affaire avec vous!</div>
                 </div>
 
                 <div>
                     <form class="contact-form" id="contactForm">
-                        <div
-                            style="text-align:center; margin-bottom:1.2em; color:var(--text-light); font-size:1.3rem; font-weight:600;">
+                        <div style="text-align:center; margin-bottom:1.2em; color:var(--text-light); font-size:1.3rem; font-weight:600;"
+                            data-i18n="contact_form_title">
                             Formulaire de contact</div>
                         <div class="form-group">
-                            <input type="text" id="from_name" name="from_name" placeholder="Votre nom" required>
+                            <input type="text" id="from_name" name="from_name" placeholder="Votre nom"
+                                data-i18n-placeholder="contact_placeholder_name" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                            <input type="email" id="email" name="email" placeholder="Votre email"
+                                data-i18n-placeholder="contact_placeholder_email" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Votre téléphone">
+                            <input type="tel" id="phone" name="phone" placeholder="Votre téléphone"
+                                data-i18n-placeholder="contact_placeholder_phone">
                         </div>
 
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Votre message" rows="5"
-                                required></textarea>
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required
+                                data-i18n-placeholder="contact_placeholder_message"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact_btn_send">Envoyer</button>
                     </form>
                 </div>
             </div>
@@ -450,11 +491,12 @@
         <div class="container">
             <div style="display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap; width:100%;">
                 <div style="width:100%; text-align:center;">
-                    <p style="margin:0 auto; text-align:center;">&copy; 2025 Me Victoria Bonneau Desmeules. Tous droits
-                        réservés.
+                    <p style="margin:0 auto; text-align:center;"><span data-i18n="footer_rights">&copy; 2025 Me Victoria
+                            Bonneau Desmeules. Tous droits réservés.</span>
                         <span style="margin:0 0.7em;"></span>
                         <a href="#" id="openLegalModal"
-                            style="font-size:0.95rem; text-decoration:underline; color:inherit;">Mention légale</a>
+                            style="font-size:0.95rem; text-decoration:underline; color:inherit;"
+                            data-i18n="footer_legal">Mention légale</a>
                     </p>
                 </div>
             </div>
@@ -468,18 +510,24 @@
             style="background:#fff; max-width:600px; width:90vw; padding:2rem 1.5rem; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.18); font-size:0.85rem; text-align:justify; position:relative;">
             <button id="closeLegalModal"
                 style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
-            <h2 style="font-size:1rem; margin-bottom:0.7rem; text-align:left;">Mention légale</h2>
-            <p><strong>Éditeur du site :</strong> Me Victoria Bonneau Desmeules, 400 boul. Jean-Lesage, Suite 550,
+            <h2 style="font-size:1rem; margin-bottom:0.7rem; text-align:left;" data-i18n="legal_title">Mention légale
+            </h2>
+            <p data-i18n="legal_editor"><strong>Éditeur du site :</strong> Me Victoria Bonneau Desmeules, 400 boul.
+                Jean-Lesage, Suite 550,
                 Québec, QC, G1K 8W1.</p>
-            <p><strong>Contact :</strong> v.bonneau-desmeules@vbdavocate.com | (418) 720-5055</p>
-            <p><strong>Propriété intellectuelle :</strong> Tous les contenus présents sur ce site (textes, images,
+            <p data-i18n="legal_contact"><strong>Contact :</strong> v.bonneau-desmeules@vbdavocate.com | (418) 720-5055
+            </p>
+            <p data-i18n="legal_ip"><strong>Propriété intellectuelle :</strong> Tous les contenus présents sur ce site
+                (textes, images,
                 logos, etc.) sont la propriété exclusive de Me Victoria Bonneau Desmeules, sauf mention contraire. Toute
                 reproduction, représentation ou diffusion, totale ou partielle, est interdite sans autorisation
                 préalable.</p>
-            <p><strong>Responsabilité :</strong> Les informations fournies sur ce site sont à titre indicatif et ne
+            <p data-i18n="legal_responsibility"><strong>Responsabilité :</strong> Les informations fournies sur ce site
+                sont à titre indicatif et ne
                 sauraient constituer un conseil juridique personnalisé. Me Victoria Bonneau Desmeules ne saurait être
                 tenue responsable de l’utilisation qui pourrait en être faite.</p>
-            <p><strong>Données personnelles :</strong> Les données collectées via le formulaire de contact sont
+            <p data-i18n="legal_data"><strong>Données personnelles :</strong> Les données collectées via le formulaire
+                de contact sont
                 utilisées uniquement pour répondre aux demandes et ne sont pas conservées ni transmises à des tiers.
                 Conformément à la loi, vous pouvez demander la suppression ou la modification de vos données en
                 contactant l’éditeur.</p>
@@ -489,6 +537,7 @@
     <!-- Conteneur de notifications -->
     <div id="notification-container"></div>
 
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
     <style>
         .navbar {
