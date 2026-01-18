@@ -226,27 +226,22 @@ body {
     }
 
 
-    /* Force dark text on white mobile menu */
+    /* Mobile Menu Styling - Dark Theme */
     .nav-menu {
         z-index: 2000;
         /* Ensure container is above everything */
-        background: #fff !important;
-        /* Force white background */
+        background: var(--primary-color) !important;
     }
 
     .nav-menu a {
-        color: #1f3a52 !important;
-        /* Force dark blue explicitly */
+        color: var(--text-light) !important;
         background: transparent !important;
-        /* Ensure no white-on-white bg */
         display: block;
         padding: 1rem;
         width: 100%;
         text-align: center;
-        font-weight: 600;
-        /* Make it slightly bolder to ensure readability */
+        font-weight: 500;
         z-index: 2010;
-        /* Ensure text is strictly above container */
         position: relative;
     }
 
@@ -261,13 +256,13 @@ body {
         padding: 1rem;
         font-size: 1.1rem;
         margin-top: 0;
-        color: #1f3a52 !important;
-        /* Force dark blue explicitly */
+        color: var(--text-light) !important;
         background: transparent !important;
-        font-weight: 600;
+        font-weight: 500;
         z-index: 2010;
         position: relative;
-        /* Visible on white background */
+        display: flex;
+        /* Ensure it's displayed */
     }
 
     .lang-btn:hover {
@@ -739,7 +734,7 @@ body {
         top: 60px;
         left: 0;
         width: 100vw;
-        background: #fff;
+        background: var(--primary-color);
         box-shadow: 0 8px 32px rgba(30, 60, 120, 0.13);
         z-index: 1000;
         padding: 1.2em 0;
