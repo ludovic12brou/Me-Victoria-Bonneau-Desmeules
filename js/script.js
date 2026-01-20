@@ -1,6 +1,6 @@
 // Langue par défaut
 console.log('Script chargé. Détection de la langue...');
-let currentLang = localStorage.getItem('site_lang') || (navigator.language.startsWith('en') ? 'en' : 'fr');
+let currentLang = localStorage.getItem('site_lang') || 'fr';
 console.log('Langue actuelle:', currentLang);
 
 // Fonction de mise à jour de la langue
