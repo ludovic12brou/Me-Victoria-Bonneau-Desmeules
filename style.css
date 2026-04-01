@@ -28,14 +28,13 @@
     max-width: 100%;
     white-space: pre-line;
 }
-}
+
 .email-box {
     max-width: 100%;
     overflow-wrap: anywhere;
     word-break: break-all;
     white-space: normal;
     display: block;
-}
 }
 .tarif-badge {
     background: #6ca6d6;
@@ -147,15 +146,17 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
+    font-size: 0.7rem;
 }
 
 .nav-menu a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.7rem;
     transition: var(--transition);
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.5rem;
     border-radius: var(--border-radius);
 }
 

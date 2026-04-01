@@ -108,14 +108,15 @@ body {
 
 .logo h1 {
     color: var(--text-light);
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     font-weight: 700;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
+    font-size: 0.7rem;
     align-items: center;
     /* Ensure vertical alignment */
     flex-wrap: nowrap;
@@ -126,8 +127,9 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.7rem;
     transition: var(--transition);
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.5rem;
     border-radius: var(--border-radius);
     display: flex;
     /* Make links flex containers too for identical behavior */
@@ -191,9 +193,9 @@ body {
     color: var(--text-light);
     font-family: 'Montserrat', sans-serif;
     /* Force font consistency */
-    font-size: 1rem;
+    font-size: 0.7rem;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.5rem;
     /* Same padding as links */
     border-radius: var(--border-radius);
     font-weight: 500;
@@ -467,6 +469,78 @@ body {
 .service-card p {
     color: #666;
     line-height: 1.8;
+}
+
+/* Section Témoignages */
+.testimonials {
+    padding: 80px 20px;
+    background-color: var(--text-light);
+    /* Beige background to contrast with blue sections */
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.stars {
+    color: #ffc107;
+    /* Amber/Gold color for better visibility */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: block;
+    letter-spacing: 2px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    flex-grow: 1;
+    /* Pushes author to bottom */
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    margin-top: auto;
 }
 
 /* Section Tarifs */

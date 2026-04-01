@@ -2,7 +2,7 @@ window.translations = {
     fr: {
         nav_home: "Accueil",
         nav_services: "Services",
-        nav_rates: "Tarifs",
+        nav_rates: "Services détaillés",
         nav_contact: "Contact",
         header_title: "Me Victoria Bonneau Desmeules - Avocate",
 
@@ -10,7 +10,14 @@ window.translations = {
         hero_name: "Me Victoria Bonneau Desmeules",
         hero_subtitle: "Avocate spécialisée principalement en droit familial",
         hero_cta: "Nous contacter",
-        hero_desc: "Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet <a href=\"https://ctmbavocats.com\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">DCTMB Avocats</a>. Diplômée en droit de l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche bienveillante. Elle offre également divers services connexes au droit, mettant à profit ses compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et sa rigueur contribuent activement à la réputation d'excellence du cabinet.",
+        hero_desc: "Victoria Bonneau Desmeules est une avocate passionnée et dynamique au sein du cabinet <a href=\"https://ctmbavocats.com\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">DCTMB Avocats</a>. Diplômée en droit de l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche bienveillante. Elle offre également divers services, mettant à profit ses compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et sa rigueur contribuent activement à la réputation d'excellence du cabinet.",
+
+        testimonials_title: "Ce que nos clients disent",
+        testimonial_1_text: " \"Me Bonneau Desmeules a su m'écouter et me guider à travers mon divorce avec beaucoup d'humanité. Je recommande ses services sans hésiter.\"",
+        testimonial_2_text: " \"Une avocate très compétente et professionnelle. Je me suis senti en confiance tout au long du processus et le résultat a dépassé mes attentes.\"",
+        testimonial_3_text: " \"Merci pour votre aide précieuse pour la garde de mes enfants. Tout s'est bien déroulé grâce à votre expertise et votre soutien.\"",
+        testimonial_4_text: " \"Un service impeccable. J'ai beaucoup apprécié la disponibilité et la clarté des explications tout au long de mon dossier.\"",
+        testimonial_5_text: " \"Approche très humaine et efficace. Je me suis sentie soutenue dans une période difficile de ma vie.\"",
 
         services_title: "Nos services",
         services_availability: "Services disponibles en présentiel et à distance pour plus de flexibilité.",
@@ -36,24 +43,24 @@ window.translations = {
         service_demand_title: "Mise en Demeure",
         service_demand_desc: "Rédaction et envoi de mises en demeure pour défendre vos droits et vos intérêts de manière formelle.",
 
-        rates_title: "Tarifs",
-        rates_desc: "Vous trouverez ci-bas nos tarifs pour certains des services offerts.",
+        rates_title: "Services détaillés",
+        rates_desc: "Découvrez ce que chaque service comprend pour vous accompagner dans vos démarches.",
 
         rate_demand_title: "Mise en demeure",
-        rate_demand_price: "550$ CAD",
+        rate_demand_price: "Mise en demeure",
         rate_demand_subtitle: "Mise en demeure",
         rate_demand_step1: "Rencontre initiale (30 minutes)",
         rate_demand_step2: "Rédaction de la mise en demeure",
         rate_demand_step3: "Envoi par huissier (frais de huissier non-inclus)",
 
         rate_advice_title: "Conseils juridiques",
-        rate_advice_price: "150$ CAD / heure",
+        rate_advice_price: "Conseils juridiques",
         rate_advice_subtitle: "Conseils juridiques",
         rate_advice_step1: "Rencontre par visioconférence",
 
-        rate_uncontested_title: "Divorce non-contesté",
-        rate_uncontested_price: "1 500$ CAD",
-        rate_uncontested_subtitle: "Divorce non-contesté",
+        rate_uncontested_title: "Divorce à l'amiable",
+        rate_uncontested_price: "Divorce à l'amiable",
+        rate_uncontested_subtitle: "Divorce à l'amiable",
         rate_uncontested_step1: "Rencontre initiale (1h)",
         rate_uncontested_step2: "Rédaction de la demande conjointe de divorce",
         rate_uncontested_step3: "Préparation des déclarations sous serment des parties",
@@ -62,7 +69,7 @@ window.translations = {
         rate_uncontested_step6: "Timbre judiciaire non-inclu, environ 365$",
 
         rate_contested_title: "Divorce contesté",
-        rate_contested_price: "1 700$ CAD",
+        rate_contested_price: "Divorce contesté",
         rate_contested_subtitle: "Divorce contesté",
         rate_contested_step1: "Rencontre initiale (1h30)",
         rate_contested_step2: "Rédaction de la demande introductive d’instance en divorce",
@@ -75,7 +82,7 @@ window.translations = {
 
         rate_contested_family_title: "Procédure contestée en matière familiale",
         rate_contested_family_subtitle1: "(Demande en garde d’enfants et/ou pour pension alimentaire)",
-        rate_contested_family_price: "1 600$ CAD",
+        rate_contested_family_price: "Procédure contestée en matière familiale",
         rate_contested_family_subtitle2: "Procédure contestée en matière familiale",
         rate_contested_family_step1: "Demande introductive ou demande en modification d’un jugement précédent",
         rate_contested_family_step2: "Rencontre initiale (1h30)",
@@ -88,7 +95,7 @@ window.translations = {
 
         rate_uncontested_family_title: "Procédures non-contestées en matière familiale",
         rate_uncontested_family_subtitle1: "(Demande en garde d’enfants et/ou pour pension alimentaire)",
-        rate_uncontested_family_price: "1 300$ CAD",
+        rate_uncontested_family_price: "Procédures non-contestées en matière familiale",
         rate_uncontested_family_subtitle2: "Procédures non-contestées en matière familiale",
         rate_uncontested_family_step1: "Rencontre initiale (1h)",
         rate_uncontested_family_step2: "Rédaction de la demande initiale ou de la demande en modification",
@@ -132,7 +139,7 @@ window.translations = {
     en: {
         nav_home: "Home",
         nav_services: "Services",
-        nav_rates: "Rates",
+        nav_rates: "Detailed services",
         nav_contact: "Contact",
         header_title: "Me Victoria Bonneau Desmeules - Lawyer",
 
@@ -141,6 +148,13 @@ window.translations = {
         hero_subtitle: "Lawyer specializing mainly in family law",
         hero_cta: "Contact Us",
         hero_desc: "Victoria Bonneau Desmeules is a passionate and dynamic lawyer at <a href=\"https://ctmbavocats.com\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">DCTMB Avocats</a>. A law graduate from Université Laval, she practices primarily in family law, a field in which she supports her clients with empathy and professionalism. With deeply rooted family values, she stands out for her humanity, her ability to listen, and her caring approach. She also offers various services related to law, using her solid skills to offer solutions adapted to each situation. Her commitment and rigor actively contribute to the firm's reputation for excellence.",
+
+        testimonials_title: "What our clients say",
+        testimonial_1_text: " \"Me Bonneau Desmeules listened to me and guided me through my divorce with great humanity. I recommend her services without hesitation.\"",
+        testimonial_2_text: " \"A very competent and professional lawyer. I felt confident throughout the process and the result exceeded my expectations.\"",
+        testimonial_3_text: " \"Thank you for your precious help with my child custody case. Everything went well thanks to your expertise and support.\"",
+        testimonial_4_text: " \"Impeccable service. I really appreciated the availability and clarity of explanations throughout my file.\"",
+        testimonial_5_text: " \"Very human and effective approach. I felt supported during a difficult time in my life.\"",
 
         services_title: "Our Services",
         services_availability: "Services available in person and remotely for greater flexibility.",
@@ -166,24 +180,24 @@ window.translations = {
         service_demand_title: "Formal Demand Letter",
         service_demand_desc: "Drafting and sending formal notices to defend your rights and interests formally.",
 
-        rates_title: "Rates",
-        rates_desc: "Below you will find our rates for some of the services offered.",
+        rates_title: "Detailed services",
+        rates_desc: "Discover what each service includes to support you through your legal process.",
 
         rate_demand_title: "Formal demand letter",
-        rate_demand_price: "$550 CAD",
+        rate_demand_price: "Formal demand letter",
         rate_demand_subtitle: "Formal demand letter",
         rate_demand_step1: "Initial meeting (30 minutes)",
         rate_demand_step2: "Drafting of the formal notice",
         rate_demand_step3: "Sending by bailiff (bailiff fees not included)",
 
         rate_advice_title: "Legal advice",
-        rate_advice_price: "$150 CAD / hour",
+        rate_advice_price: "Legal advice",
         rate_advice_subtitle: "Legal advice",
         rate_advice_step1: "Meeting by videoconference",
 
-        rate_uncontested_title: "Uncontested divorce",
-        rate_uncontested_price: "$1,500 CAD",
-        rate_uncontested_subtitle: "Uncontested divorce",
+        rate_uncontested_title: "Amicable divorce",
+        rate_uncontested_price: "Amicable divorce",
+        rate_uncontested_subtitle: "Amicable divorce",
         rate_uncontested_step1: "Initial meeting (1h)",
         rate_uncontested_step2: "Drafting of the joint divorce application",
         rate_uncontested_step3: "Preparation of the parties' sworn statements",
@@ -192,7 +206,7 @@ window.translations = {
         rate_uncontested_step6: "Court stamp not included, approx. $365",
 
         rate_contested_title: "Contested divorce",
-        rate_contested_price: "$1,700 CAD",
+        rate_contested_price: "Contested divorce",
         rate_contested_subtitle: "Contested divorce",
         rate_contested_step1: "Initial meeting (1h30)",
         rate_contested_step2: "Drafting of the divorce application",
@@ -205,7 +219,7 @@ window.translations = {
 
         rate_contested_family_title: "Contested procedure in family matters",
         rate_contested_family_subtitle1: "(Application for child custody and/or child support)",
-        rate_contested_family_price: "$1,600 CAD",
+        rate_contested_family_price: "Contested procedure in family matters",
         rate_contested_family_subtitle2: "Contested procedure in family matters",
         rate_contested_family_step1: "Introductory application or modification application of a previous judgment",
         rate_contested_family_step2: "Initial meeting (1h30)",
@@ -218,7 +232,7 @@ window.translations = {
 
         rate_uncontested_family_title: "Uncontested procedures in family matters",
         rate_uncontested_family_subtitle1: "(Application for child custody and/or child support)",
-        rate_uncontested_family_price: "$1,300 CAD",
+        rate_uncontested_family_price: "Uncontested procedures in family matters",
         rate_uncontested_family_subtitle2: "Uncontested procedures in family matters",
         rate_uncontested_family_step1: "Initial meeting (1h)",
         rate_uncontested_family_step2: "Drafting of the initial application or modification application",

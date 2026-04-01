@@ -120,14 +120,12 @@
     }
     </script>
 
-    <link rel="icon" type="image/png" href="images/VBD.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="images/VBD.png" sizes="128x128">
-    <link rel="icon" type="image/png" href="images/VBD.png" sizes="256x256">
+    <link rel="icon" type="image/png" href="images/VIVIGNE.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.3">
+    <link rel="stylesheet" href="css/style.css?v=2.5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -139,7 +137,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo" style="display:flex;align-items:center;min-width:0;">
-                    <img src="images/VBD.png" alt="Logo VBD"
+                    <img src="images/VIVIGNE.png" alt="Logo VIVIGNE"
                         style="height:40px;vertical-align:middle;margin-right:0.7em;max-width:100%;">
                     <h1 style="display:inline-block;vertical-align:middle;font-size:1.15rem;padding-right:4.5rem;"
                         data-i18n="header_title">Me
@@ -152,7 +150,7 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
                     <li><a href="#services" data-i18n="nav_services">Services</a></li>
-                    <li><a href="#tarifs" data-i18n="nav_rates">Tarifs</a></li>
+                    <li><a href="#tarifs" data-i18n="nav_rates">Services détaillés</a></li>
                     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
                     <li>
                         <button id="langToggle" class="lang-btn" type="button">
@@ -184,7 +182,7 @@
                         l'Université Laval, elle pratique principalement en droit de la famille, domaine dans lequel
                         elle accompagne ses clients avec empathie et professionnalisme. Forte de valeurs familiales
                         profondément ancrées, elle se distingue par son humanité, son sens de l'écoute et son approche
-                        bienveillante. Elle offre également divers services connexes au droit, mettant à profit ses
+                        bienveillante. Elle offre divers services, mettant à profit ses
                         compétences solides pour proposer des solutions adaptées à chaque situation. Son engagement et
                         sa rigueur contribuent activement à la réputation d'excellence du cabinet.</p>
                 </div>
@@ -194,6 +192,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Section Témoignages -->
 
     <!-- Section Services -->
     <section id="services" class="services">
@@ -277,9 +277,8 @@
     <!-- Section Tarifs -->
     <section id="tarifs" class="tarifs">
         <div class="container">
-            <h2 data-i18n="rates_title">Tarifs</h2>
-            <p class="service-availability" data-i18n="rates_desc">Vous trouverez ci-bas nos tarifs pour certains des
-                services offerts.</p>
+            <h2 data-i18n="rates_title">Services détaillés</h2>
+            <p class="service-availability" data-i18n="rates_desc">Découvrez ce que chaque service comprend pour vous accompagner dans vos démarches.</p>
             <div class="tarifs-grid">
                 <div class="tarifs-card">
                     <div class="tarifs-card-inner">
@@ -289,11 +288,7 @@
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_demand_price">550$ CAD</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_demand_subtitle">Mise
-                                    en demeure</span>
+                                <div class="tarif-badge" data-i18n="rate_demand_price">Mise en demeure</div>
                             </div>
                             <ul class="tarif-steps" style="font-size:0.75em;">
                                 <li data-i18n="rate_demand_step1">Rencontre initiale (30 minutes)</li>
@@ -311,11 +306,7 @@
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_advice_price">150$ CAD / heure</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_advice_subtitle">Conseils
-                                    juridiques</span>
+                                <div class="tarif-badge" data-i18n="rate_advice_price">Conseils juridiques</div>
                             </div>
                             <ul class="tarif-steps">
                                 <li data-i18n="rate_advice_step1">Rencontre par visioconférence</li>
@@ -327,15 +318,11 @@
                     <div class="tarifs-card-inner">
                         <div class="tarifs-card-front">
                             <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                            <h3 data-i18n="rate_uncontested_title">Divorce non-contesté</h3>
+                            <h3 data-i18n="rate_uncontested_title">Divorce à l'amiable</h3>
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_uncontested_price">1 500$ CAD</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_uncontested_subtitle">Divorce
-                                    non-contesté</span>
+                                <div class="tarif-badge" data-i18n="rate_uncontested_price">Divorce à l'amiable</div>
                             </div>
                             <ul class="tarif-steps">
                                 <li data-i18n="rate_uncontested_step1">Rencontre initiale (1h)</li>
@@ -357,11 +344,7 @@
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_contested_price">1 700$ CAD</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_contested_subtitle">Divorce
-                                    contesté</span>
+                                <div class="tarif-badge" data-i18n="rate_contested_price">Divorce contesté</div>
                             </div>
                             <ul class="tarif-steps">
                                 <li data-i18n="rate_contested_step1">Rencontre initiale (1h30)</li>
@@ -390,11 +373,7 @@
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_contested_family_price">1 600$ CAD</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_contested_family_subtitle2">Procédure
-                                    contestée en matière familiale</span>
+                                <div class="tarif-badge" data-i18n="rate_contested_family_price">Procédure contestée en matière familiale</div>
                             </div>
                             <ul class="tarif-steps">
                                 <li data-i18n="rate_contested_family_step1">Demande introductive ou demande en
@@ -425,11 +404,7 @@
                         </div>
                         <div class="tarifs-card-back">
                             <div style="display:block;">
-                                <div class="tarif-badge" data-i18n="rate_uncontested_family_price">1 300$ CAD</div>
-                                <span
-                                    style="font-size:0.85em; color:#eee; display:block; margin-top:0.2em; font-weight:bold;"
-                                    data-i18n="rate_uncontested_family_subtitle2">Procédures
-                                    non-contestées en matière familiale</span>
+                                <div class="tarif-badge" data-i18n="rate_uncontested_family_price">Procédures non-contestées en matière familiale</div>
                             </div>
                             <ul class="tarif-steps">
                                 <li data-i18n="rate_uncontested_family_step1">Rencontre initiale (1h)</li>
@@ -447,6 +422,11 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Section Contact -->
